@@ -7,8 +7,8 @@ squarePOSplugin.prototype.startTransaction = function(successCallback, errorCall
   cordova.exec(successCallback, errorCallback, 'squarePOSplugin', 'startTransaction');
 }
 
-squarePOSplugin.prototype.startTransaction = function(successCallback, errorCallback) {
-  cordova.exec(successCallback, errorCallback, 'squarePOSplugin', 'startTransaction');
+squarePOSplugin.prototype.onActivityResult = function(successCallback, errorCallback) {
+  cordova.exec(successCallback, errorCallback, 'squarePOSplugin', 'onActivityResult');
 }
 
 // Installation constructor that binds ToastyPlugin to window
