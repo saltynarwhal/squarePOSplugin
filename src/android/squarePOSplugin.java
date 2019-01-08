@@ -17,6 +17,18 @@ public class squarePOSplugin extends CordovaPlugin {
     posClient = PosSdk.createClient(this, APPLICATION_ID);
   }
 
+  public boolean execute(String action, final CallbackContext callbackContext) {
+
+    if(action.equals("startTransaction")){
+      startTransaction(args, callbackContext);
+      return true;
+    } else if (action.equals("createEMVTransaction")) {
+      createEMVTransaction(args, callbackContext);
+      return true;
+    } else {
+      callbackContext.error("\"" + action + "\" is not a recognized action.");
+      return false;
+    }
 
   // create a new charge request and initiate a Point of Sale transaction
   private static final int CHARGE_REQUEST_CODE = 1;
