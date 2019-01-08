@@ -20,10 +20,10 @@ public class squarePOSplugin extends CordovaPlugin {
   public boolean execute(String action, final CallbackContext callbackContext) {
 
     if(action.equals("startTransaction")){
-      startTransaction(args, callbackContext);
+      startTransaction();
       return true;
-    } else if (action.equals("createEMVTransaction")) {
-      createEMVTransaction(args, callbackContext);
+    } else if (action.equals("onActivityResult")) {
+      onActivityResult();
       return true;
     } else {
       callbackContext.error("\"" + action + "\" is not a recognized action.");
