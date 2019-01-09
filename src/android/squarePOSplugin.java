@@ -35,6 +35,7 @@ public class squarePOSplugin extends CordovaPlugin {
       callbackContext.error("\"" + action + "\" is not a recognized action.");
       return false;
     }
+  }
 
   // create a new charge request and initiate a Point of Sale transaction
   private static final int CHARGE_REQUEST_CODE = 1;
