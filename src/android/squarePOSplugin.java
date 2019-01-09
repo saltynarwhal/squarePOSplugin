@@ -2,7 +2,10 @@ package com.saltynarwhal.cordova.plugin;
 
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaPlugin;
+import org.apache.cordova.CordovaActivity;
+import org.apache.cordova.CordovaWebView;
 import org.apache.cordova.PluginResult;
+import org.apache.cordova.PluginResult.Status;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -10,13 +13,13 @@ import org.json.JSONObject;
 import android.util.Log;
 import android.content.Context;
 import android.content.Intent;
+import android.os.Bundle;
 
 import com.squareup.sdk.pos.ChargeRequest;
 import com.squareup.sdk.pos.CurrencyCode;
 import com.squareup.sdk.pos.PosClient;
 import com.squareup.sdk.pos.PosSdk;
 import com.squareup.sdk.pos;
-import com.squareup.sdk.pos.Bundle;
 
 public class squarePOSplugin extends CordovaPlugin {
   private static final String APPLICATION_ID = "sq0idp-qHqpaVYtEOSxH1Kz6IODFw";
