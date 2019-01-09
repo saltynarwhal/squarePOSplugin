@@ -15,6 +15,8 @@ import com.squareup.sdk.pos.ChargeRequest;
 import com.squareup.sdk.pos.CurrencyCode;
 import com.squareup.sdk.pos.PosClient;
 import com.squareup.sdk.pos.PosSdk;
+import com.squareup.sdk.pos;
+import com.squareup.sdk.pos.Bundle;
 
 public class squarePOSplugin extends CordovaPlugin {
   private static final String APPLICATION_ID = "sq0idp-qHqpaVYtEOSxH1Kz6IODFw";
