@@ -5,6 +5,10 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import android.util.Log;
+import android.content.Context;
+import android.content.Intent;
+
 public class squarePOSplugin extends CordovaPlugin {
   private static final String APPLICATION_ID = "sq0idp-qHqpaVYtEOSxH1Kz6IODFw";
 
