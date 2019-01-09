@@ -26,7 +26,7 @@ public class squarePOSplugin extends CordovaPlugin {
 
   private PosClient posClient;
 
-  @Override protected void onCreate(Bundle savedInstanceState) {
+  protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.main_activity);
     // Replace APPLICATION_ID with a Square-assigned application ID
@@ -70,28 +70,28 @@ public class squarePOSplugin extends CordovaPlugin {
 
   @Override protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 
-  // Handle unexpected errors
-  if (data == null || requestCode != CHARGE_REQUEST_CODE) {
-    AlertDialogHelper.showDialog(this, "Error: unknown", "Square Point of Sale was uninstalled or stopped working");
-    return;
-  }
+    // Handle unexpected errors
+    if (data == null || requestCode != CHARGE_REQUEST_CODE) {
+      AlertDialogHelper.showDialog(this, "Error: unknown", "Square Point of Sale was uninstalled or stopped working");
+      return;
+    }
 
-  // Handle expected results
-  if (resultCode == Activity.RESULT_OK) {
-    // Handle success
-    ChargeRequest.Success success = posClient.parseChargeSuccess(data);
-    AlertDialogHelper.showDialog(this,
+    // Handle expected results
+    if (resultCode == Activity.RESULT_OK) {
+      // Handle success
+      ChargeRequest.Success success = posClient.parseChargeSuccess(data);
+      AlertDialogHelper.showDialog(this,
         "Success",
         "Client transaction ID: "
             + success.clientTransactionId);
-  } else {
+    } else {
       // Handle expected errors
       ChargeRequest.Error error = posClient.parseChargeError(data);
       AlertDialogHelper.showDialog(this,
           "Error" + error.code,
           "Client transaction ID: "
               + error.debugDescription);
+    }
+    return;
   }
-  return;
-}
 }
