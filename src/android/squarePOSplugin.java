@@ -38,7 +38,7 @@ public class squarePOSplugin extends CordovaPlugin {
     super.initialize(cordova, webView);
     Log.d(TAG, "Initializing authozizeNetPlugin");
 
-    posClient = PosSdk.createClient(getActivity(), APPLICATION_ID);
+    posClient = PosSdk.createClient(cordova.getActivity(), APPLICATION_ID);
   }
 
   public boolean execute(String action, final CallbackContext callbackContext) {
