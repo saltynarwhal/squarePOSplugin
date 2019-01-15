@@ -23,6 +23,7 @@ import com.squareup.sdk.pos.PosSdk;
 
 public class squarePOSplugin extends CordovaPlugin {
   private static final String APPLICATION_ID = "sq0idp-qHqpaVYtEOSxH1Kz6IODFw";
+  private static final String TAG = "squarePOSplugin";
 
   private PosClient posClient;
 
@@ -37,7 +38,7 @@ public class squarePOSplugin extends CordovaPlugin {
     super.initialize(cordova, webView);
     Log.d(TAG, "Initializing authozizeNetPlugin");
 
-    posClient = PosSdk.createClient(this, APPLICATION_ID);
+    posClient = PosSdk.createClient(this.getActivity(), APPLICATION_ID);
   }
 
   public boolean execute(String action, final CallbackContext callbackContext) {
