@@ -26,10 +26,17 @@ public class squarePOSplugin extends CordovaPlugin {
 
   private PosClient posClient;
 
-  protected void onCreate(Bundle savedInstanceState) {
+  /*protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.main_activity);
     // Replace APPLICATION_ID with a Square-assigned application ID
+    posClient = PosSdk.createClient(this, APPLICATION_ID);
+  }*/
+
+  public void initialize(CordovaInterface cordova, CordovaWebView webView) {
+    super.initialize(cordova, webView);
+    Log.d(TAG, "Initializing authozizeNetPlugin");
+
     posClient = PosSdk.createClient(this, APPLICATION_ID);
   }
 
