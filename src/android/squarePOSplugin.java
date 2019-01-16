@@ -47,7 +47,7 @@ public class squarePOSplugin extends CordovaPlugin {
       startTransaction();
       return true;
     } else if (action.equals("onActivityResult")) {
-      onActivityResult();
+      onActivityResult(requestCode, resultCode, data);
       return true;
     } else {
       callbackContext.error("\"" + action + "\" is not a recognized action.");
