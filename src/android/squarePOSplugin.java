@@ -16,7 +16,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.content.ActivityNotFoundException;
-import android.app.AlertDialogHelper;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 
 import com.squareup.sdk.pos.ChargeRequest;
 import com.squareup.sdk.pos.CurrencyCode;
