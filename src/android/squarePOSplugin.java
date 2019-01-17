@@ -62,9 +62,9 @@ public class squarePOSplugin extends CordovaPlugin {
     .build();
     try {
       Intent intent = posClient.createChargeIntent(request);
-      
+
       cordova.setActivityResultCallback (this);
-      cordova.getActivity().startActivityForResult(this, intent, CHARGE_REQUEST_CODE);
+      cordova.startActivityForResult(this, intent, CHARGE_REQUEST_CODE);
     }
     catch (ActivityNotFoundException e) {
       AlertDialogHelper.showDialog(
