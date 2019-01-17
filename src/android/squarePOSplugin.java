@@ -36,7 +36,7 @@ public class squarePOSplugin extends CordovaPlugin {
 
   public void initialize(CordovaInterface cordova, CordovaWebView webView) {
     super.initialize(cordova, webView);
-    Log.d(TAG, "Initializing authozizeNetPlugin");
+    Log.d(TAG, "Initializing squarePOSplugin");
 
     posClient = PosSdk.createClient(cordova.getActivity(), APPLICATION_ID);
   }
@@ -45,9 +45,7 @@ public class squarePOSplugin extends CordovaPlugin {
 
     if(action.equals("startTransaction")){
       startTransaction();
-      return true;
-    } else if (action.equals("onActivityResult")) {
-      onActivityResult(callbackContext);
+
       return true;
     } else {
       callbackContext.error("\"" + action + "\" is not a recognized action.");
@@ -64,7 +62,9 @@ public class squarePOSplugin extends CordovaPlugin {
     .build();
     try {
       Intent intent = posClient.createChargeIntent(request);
-      startActivityForResult(intent, CHARGE_REQUEST_CODE);
+      
+      cordova.setActivityResultCallback (this);
+      cordova.getActivity().startActivityForResult(this, intent, CHARGE_REQUEST_CODE);
     }
     catch (ActivityNotFoundException e) {
       AlertDialogHelper.showDialog(
@@ -76,7 +76,7 @@ public class squarePOSplugin extends CordovaPlugin {
     }
   }
 
-  @Override protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+  @Override public void onActivityResult(int requestCode, int resultCode, Intent data) {
 
     // Handle unexpected errors
     if (data == null || requestCode != CHARGE_REQUEST_CODE) {
