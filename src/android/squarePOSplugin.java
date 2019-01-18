@@ -81,6 +81,7 @@ public class squarePOSplugin extends CordovaPlugin {
   }
 
   @Override public void onActivityResult(int requestCode, int resultCode, Intent data) {
+    AlertDialogHelper AlertDialogHelper = new AlertDialogHelper();
 
     // Handle unexpected errors
     if (data == null || requestCode != CHARGE_REQUEST_CODE) {
