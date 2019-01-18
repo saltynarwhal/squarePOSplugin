@@ -28,7 +28,7 @@ import com.squareup.sdk.pos.CurrencyCode;
 import com.squareup.sdk.pos.PosClient;
 import com.squareup.sdk.pos.PosSdk;
 
-private class AlertDialogHelper extends DialogFragment {
+class AlertDialogHelper extends DialogFragment {
 
       private static AlertDialog mAlertDialog;
 
