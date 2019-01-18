@@ -28,7 +28,7 @@ import com.squareup.sdk.pos.CurrencyCode;
 import com.squareup.sdk.pos.PosClient;
 import com.squareup.sdk.pos.PosSdk;
 
-class AlertDialogHelper extends DialogFragment {
+/*class AlertDialogHelper extends DialogFragment {
 
       private static AlertDialog mAlertDialog;
 
@@ -73,7 +73,7 @@ class AlertDialogHelper extends DialogFragment {
             }
       }
 }
-
+*/
 public class squarePOSplugin extends CordovaPlugin {
   private static final String APPLICATION_ID = "sq0idp-qHqpaVYtEOSxH1Kz6IODFw";
   private static final String TAG = "squarePOSplugin";
@@ -120,21 +120,20 @@ public class squarePOSplugin extends CordovaPlugin {
       cordova.startActivityForResult(this, intent, CHARGE_REQUEST_CODE);
     }
     catch (ActivityNotFoundException e) {
-      AlertDialogHelper.showDialog(
+      /*AlertDialogHelper.showDialog(
         this,
         "Error",
         "Square Point of Sale is not installed"
-      );
+      );*/
       posClient.openPointOfSalePlayStoreListing();
     }
   }
 
   @Override public void onActivityResult(int requestCode, int resultCode, Intent data) {
-    AlertDialogHelper AlertDialogHelper = new AlertDialogHelper();
 
     // Handle unexpected errors
     if (data == null || requestCode != CHARGE_REQUEST_CODE) {
-      AlertDialogHelper.showDialog(this, "Error: unknown", "Square Point of Sale was uninstalled or stopped working");
+      /*AlertDialogHelper.showDialog(this, "Error: unknown", "Square Point of Sale was uninstalled or stopped working");*/
       return;
     }
 
@@ -142,17 +141,17 @@ public class squarePOSplugin extends CordovaPlugin {
     if (resultCode == Activity.RESULT_OK) {
       // Handle success
       ChargeRequest.Success success = posClient.parseChargeSuccess(data);
-      AlertDialogHelper.showDialog(this,
+      /*AlertDialogHelper.showDialog(this,
         "Success",
         "Client transaction ID: "
-            + success.clientTransactionId);
+            + success.clientTransactionId);*/
     } else {
       // Handle expected errors
       ChargeRequest.Error error = posClient.parseChargeError(data);
-      AlertDialogHelper.showDialog(this,
+      /*AlertDialogHelper.showDialog(this,
           "Error" + error.code,
           "Client transaction ID: "
-              + error.debugDescription);
+              + error.debugDescription);*/
     }
     return;
   }
