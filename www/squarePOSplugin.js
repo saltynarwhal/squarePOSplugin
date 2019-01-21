@@ -23,7 +23,7 @@ squarePOSplugin.install = function() {
   if (!window.plugins) {
     window.plugins = {};
   }
-  window.plugins.toastyPlugin = new squarePOSplugin();
+  window.plugins.squarePOSplugin = new squarePOSplugin();
   return window.plugins.squarePOSplugin;
 };
 cordova.addConstructor(squarePOSplugin.install);
