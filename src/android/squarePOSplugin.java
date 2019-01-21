@@ -20,8 +20,6 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.app.Dialog;
 import android.app.Activity;
-import android.content.pm.PackageManager;
-import android.support.v4.app.DialogFragment;
 
 import com.squareup.sdk.pos.ChargeRequest;
 import com.squareup.sdk.pos.CurrencyCode;
