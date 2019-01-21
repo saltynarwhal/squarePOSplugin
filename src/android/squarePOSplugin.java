@@ -76,8 +76,6 @@ public class squarePOSplugin extends CordovaPlugin {
   private static final String APPLICATION_ID = "sq0idp-qHqpaVYtEOSxH1Kz6IODFw";
   private static final String TAG = "squarePOSplugin";
 
-  private PosClient posClient;
-
   /*protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.main_activity);
@@ -88,6 +86,7 @@ public class squarePOSplugin extends CordovaPlugin {
   public void initialize(CordovaInterface cordova, CordovaWebView webView) {
     super.initialize(cordova, webView);
     Log.d(TAG, "Initializing squarePOSplugin");
+    private PosClient posClient;
 
     posClient = PosSdk.createClient(cordova.getActivity(), APPLICATION_ID);
   }
