@@ -1,4 +1,4 @@
-/ Empty constructor
+// Empty constructor
 function squarePOSplugin() {}
 
 // The function that passes work along to native shells
@@ -14,7 +14,7 @@ squarePOSplugin.prototype.onActivityResult = function(resultObject, successCallb
     resultObject.resultCode,
     resultObject.data
   ];
-  
+
   cordova.exec(successCallback, errorCallback, 'squarePOSplugin', 'onActivityResult', args);
 }
 
