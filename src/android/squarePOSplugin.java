@@ -73,7 +73,7 @@ import com.squareup.sdk.pos.PosSdk;
 }
 */
 public class squarePOSplugin extends CordovaPlugin {
-  private static final String APPLICATION_ID = "sq0idp-s3q5Y9M1RATF_OuJ_7KVMw";
+  private static final String APPLICATION_ID = "sq0idp-LtAn6a920ToNj7R4TcKrFA";
   private static final String TAG = "squarePOSplugin";
 
   /*protected void onCreate(Bundle savedInstanceState) {
