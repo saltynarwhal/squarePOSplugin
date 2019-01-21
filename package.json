@@ -1,5 +1,5 @@
 {
-  "name": "cordova-plugin-toastyplugin",
+  "name": "cordova-plugin-squarePOS",
   "version": "0.0.1",
   "description": "An Android Cordova plugin that allows users to generate a square transaction that can be completed in the Square POS. Will return transaction details.",
   "cordova": {
@@ -13,10 +13,6 @@
     "url": "git+https://github.com/saltynarwhal/squarePOSplugin.git"
   },
   "keywords": [
-    "Toast",
-    "Notification",
-    "Message",
-    "Alert",
     "ecosystem:cordova",
     "cordova-android"
   ],
