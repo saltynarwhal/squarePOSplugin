@@ -120,7 +120,7 @@ public class squarePOSplugin extends CordovaPlugin {
     }
     catch (ActivityNotFoundException e) {
       AlertDialogHelper.showDialog(
-        this,
+        cordova.getActivity(),
         "Error",
         "Square Point of Sale is not installed"
       );
