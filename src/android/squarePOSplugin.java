@@ -119,11 +119,11 @@ public class squarePOSplugin extends CordovaPlugin {
       cordova.startActivityForResult(this, intent, CHARGE_REQUEST_CODE);
     }
     catch (ActivityNotFoundException e) {
-      /*AlertDialogHelper.showDialog(
+      AlertDialogHelper.showDialog(
         this,
         "Error",
         "Square Point of Sale is not installed"
-      );*/
+      );
       posClient.openPointOfSalePlayStoreListing();
     }
   }
@@ -140,17 +140,17 @@ public class squarePOSplugin extends CordovaPlugin {
     if (resultCode == Activity.RESULT_OK) {
       // Handle success
       ChargeRequest.Success success = posClient.parseChargeSuccess(data);
-      /*AlertDialogHelper.showDialog(this,
+      AlertDialogHelper.showDialog(this,
         "Success",
         "Client transaction ID: "
-            + success.clientTransactionId);*/
+            + success.clientTransactionId);
     } else {
       // Handle expected errors
       ChargeRequest.Error error = posClient.parseChargeError(data);
-      /*AlertDialogHelper.showDialog(this,
+      AlertDialogHelper.showDialog(this,
           "Error" + error.code,
           "Client transaction ID: "
-              + error.debugDescription);*/
+              + error.debugDescription);
     }
     return;
   }

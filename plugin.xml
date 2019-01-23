@@ -25,6 +25,9 @@
             </feature>
         </config-file>
         <framework src="src/android/config.gradle" custom="true" type="gradleReference" />
+        <framework src="com.android.support:appcompat-v7:25.3.1" />
+        <framework src="com.android.support:support-v4:27.0.1" />
         <source-file src="src/android/squarePOSplugin.java" target-dir="src/com/saltynarwhal/cordova/plugin" />
+        <source-file src="src/android/AlertDialogHelper.java" target-dir="src/com/saltynarwhal/cordova/plugin" />
     </platform>
 </plugin>
