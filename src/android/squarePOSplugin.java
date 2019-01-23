@@ -96,7 +96,7 @@ public class squarePOSplugin extends CordovaPlugin {
   public boolean execute(String action, final CallbackContext callbackContext) {
 
     if(action.equals("startTransaction")){
-      startTransaction();
+      startTransaction(callbackContext);
 
       return true;
     } else {
@@ -107,7 +107,7 @@ public class squarePOSplugin extends CordovaPlugin {
 
   // create a new charge request and initiate a Point of Sale transaction
   private static final int CHARGE_REQUEST_CODE = 1;
-  public void startTransaction() {
+  public void startTransaction(CallbackContext callbackContext) {
     ChargeRequest request = new ChargeRequest.Builder(
     100,
     CurrencyCode.USD)
@@ -115,11 +115,7 @@ public class squarePOSplugin extends CordovaPlugin {
     try {
       Intent intent = posClient.createChargeIntent(request);
 
-      AlertDialogHelper.showDialog(
-        cordova.getActivity(),
-        "Success",
-        "Im in the silly function"
-      );
+      callbackContext.error("somthing");
 
       cordova.setActivityResultCallback (this);
       cordova.startActivityForResult(this, intent, CHARGE_REQUEST_CODE);
