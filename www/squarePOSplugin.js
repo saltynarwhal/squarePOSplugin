@@ -3,7 +3,7 @@ function squarePOSplugin() {}
 
 // The function that passes work along to native shells
 // Message is a string, duration may be 'long' or 'short'
-squarePOSplugin.startTransaction = function(successCallback, errorCallback) {
+squarePOSplugin.prototype.startTransaction = function(successCallback, errorCallback) {
   cordova.exec(successCallback, errorCallback, 'squarePOSplugin', 'startTransaction');
 }
 
