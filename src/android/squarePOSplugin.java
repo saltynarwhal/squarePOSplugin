@@ -140,14 +140,14 @@ public class squarePOSplugin extends CordovaPlugin {
     if (resultCode == Activity.RESULT_OK) {
       // Handle success
       ChargeRequest.Success success = posClient.parseChargeSuccess(data);
-      AlertDialogHelper.showDialog(this,
+      AlertDialogHelper.showDialog(cordova.getActivity(),
         "Success",
         "Client transaction ID: "
             + success.clientTransactionId);
     } else {
       // Handle expected errors
       ChargeRequest.Error error = posClient.parseChargeError(data);
-      AlertDialogHelper.showDialog(this,
+      AlertDialogHelper.showDialog(cordova.getActivity(),
           "Error" + error.code,
           "Client transaction ID: "
               + error.debugDescription);
