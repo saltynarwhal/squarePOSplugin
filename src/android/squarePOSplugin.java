@@ -109,7 +109,7 @@ public class squarePOSplugin extends CordovaPlugin {
   private static final int CHARGE_REQUEST_CODE = 1;
   public void startTransaction(JSONArray args, CallbackContext callbackContext) {
     ChargeRequest request = new ChargeRequest.Builder(
-    100,
+    1000,
     CurrencyCode.USD)
     .build();
     try {
