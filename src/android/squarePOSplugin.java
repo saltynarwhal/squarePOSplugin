@@ -114,9 +114,6 @@ public class squarePOSplugin extends CordovaPlugin {
     .build();
     try {
       Intent intent = posClient.createChargeIntent(request);
-
-      cordova.setActivityResultCallback (cordova.getActivity());
-      cordova.startActivityForResult(cordova.getActivity(), intent, CHARGE_REQUEST_CODE);
     }
     catch (ActivityNotFoundException e) {
       /*AlertDialogHelper.showDialog(
@@ -126,6 +123,8 @@ public class squarePOSplugin extends CordovaPlugin {
       );*/
       posClient.openPointOfSalePlayStoreListing();
     }
+    cordova.setActivityResultCallback (this);
+    cordova.startActivityForResult(this, intent, CHARGE_REQUEST_CODE);
   }
 
   @Override public void onActivityResult(int requestCode, int resultCode, Intent data) {
