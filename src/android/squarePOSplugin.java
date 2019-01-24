@@ -107,7 +107,7 @@ public class squarePOSplugin extends CordovaPlugin {
 
   // create a new charge request and initiate a Point of Sale transaction
   private static final int CHARGE_REQUEST_CODE = 1;
-  public void startTransaction(JSONArray args, CallbackContext callbackContext) {
+  public void startTransaction(JSONArray args, CallbackContext callbackContext) throws JSONException {
     //get jobid and amount
     JSONObject options = args.getJSONObject(0);
     int jobId = options.getInt("jobid");
