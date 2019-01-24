@@ -108,8 +108,12 @@ public class squarePOSplugin extends CordovaPlugin {
   // create a new charge request and initiate a Point of Sale transaction
   private static final int CHARGE_REQUEST_CODE = 1;
   public void startTransaction(JSONArray args, CallbackContext callbackContext) {
+    //get jobid and amount
+    String jobId = args.getString(0);
+    String amount = args.getString(1);
+
     ChargeRequest request = new ChargeRequest.Builder(
-    1000,
+    amount,
     CurrencyCode.USD)
     .build();
     try {
