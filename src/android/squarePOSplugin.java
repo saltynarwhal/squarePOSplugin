@@ -112,6 +112,7 @@ public class squarePOSplugin extends CordovaPlugin {
     String jobId = args.getString(0);
     String amount = args.getString(1);
 
+    //build intent and execute app switch if Square POS is on the device
     ChargeRequest request = new ChargeRequest.Builder(
     Integer.parseInt(amount),
     CurrencyCode.USD)
