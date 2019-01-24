@@ -93,7 +93,7 @@ public class squarePOSplugin extends CordovaPlugin {
     posClient = PosSdk.createClient(cordova.getActivity(), APPLICATION_ID);
   }
 
-  public boolean execute(String action, JSONArray args, final CallbackContext callbackContext) {
+  public boolean execute(String action, JSONArray args, final CallbackContext callbackContext) throws JSONException {
 
     if(action.equals("startTransaction")){
       startTransaction(args, callbackContext);
