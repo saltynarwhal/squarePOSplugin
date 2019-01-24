@@ -110,8 +110,8 @@ public class squarePOSplugin extends CordovaPlugin {
   public void startTransaction(JSONArray args, CallbackContext callbackContext) {
     //get jobid and amount
     JSONObject options = args.getJSONObject(0);
-    Int jobId = options.getInt("jobid");
-    Int amount = options.getInt("amount");
+    int jobId = options.getInt("jobid");
+    int amount = options.getInt("amount");
 
     //build intent and execute app switch if Square POS is on the device
     ChargeRequest request = new ChargeRequest.Builder(
