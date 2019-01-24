@@ -110,7 +110,7 @@ public class squarePOSplugin extends CordovaPlugin {
   public void startTransaction(JSONArray args, CallbackContext callbackContext) {
     //get jobid and amount
     String jobId = args.getString(0);
-    String amount = args.getString(1);
+    int amount = args.getString(1);
 
     ChargeRequest request = new ChargeRequest.Builder(
     amount,
