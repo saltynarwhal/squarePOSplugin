@@ -140,7 +140,7 @@ public class squarePOSplugin extends CordovaPlugin {
     if (data == null || requestCode != CHARGE_REQUEST_CODE) {
       /*AlertDialogHelper.showDialog(cordova.getActivity(),
         "Error: unknown", "Square Point of Sale was uninstalled or stopped working");*/
-      return false;
+      return;
     }
 
     // Handle expected results
@@ -151,7 +151,6 @@ public class squarePOSplugin extends CordovaPlugin {
         "Success",
         "Client transaction ID: "
             + success.clientTransactionId);
-            return true;
     } else {
       // Handle expected errors
       ChargeRequest.Error error = posClient.parseChargeError(data);
@@ -159,7 +158,6 @@ public class squarePOSplugin extends CordovaPlugin {
           "Error" + error.code,
           "Client transaction ID: "
               + error.debugDescription);
-              return false;
     }
     return;
   }
