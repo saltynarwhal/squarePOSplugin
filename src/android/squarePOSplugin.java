@@ -153,11 +153,10 @@ public class squarePOSplugin extends CordovaPlugin {
     } else {
       // Handle expected errors
       ChargeRequest.Error error = posClient.parseChargeError(data);
-      callbackContext.error("Error: " + error.debugDescription);
-      /*AlertDialogHelper.showDialog(cordova.getActivity(),
+      AlertDialogHelper.showDialog(cordova.getActivity(),
           "Error" + error.code,
           "Client transaction ID: "
-              + error.debugDescription);*/
+              + error.debugDescription);
     }
     return;
   }
