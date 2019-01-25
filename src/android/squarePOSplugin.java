@@ -157,8 +157,8 @@ public class squarePOSplugin extends CordovaPlugin {
       /*AlertDialogHelper.showDialog(cordova.getActivity(),
           "Error" + error.code,
           "Client transaction ID: "
-              + error.debugDescription);
-    }*/
+              + error.debugDescription);*/
+    }
     return;
   }
 }
