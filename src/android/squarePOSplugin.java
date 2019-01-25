@@ -139,8 +139,8 @@ public class squarePOSplugin extends CordovaPlugin {
     // Handle unexpected errors
     if (data == null || requestCode != CHARGE_REQUEST_CODE) {
       /*AlertDialogHelper.showDialog(cordova.getActivity(),
-        "Error: unknown", "Square Point of Sale was uninstalled or stopped working");
-      return;*/
+        "Error: unknown", "Square Point of Sale was uninstalled or stopped working");*/
+      return;
     }
 
     // Handle expected results
