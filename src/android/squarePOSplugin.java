@@ -182,7 +182,7 @@ public class squarePOSplugin extends CordovaPlugin {
 
       String test = success.clientTransactionId;
 
-      this.callbackContext.success(test);
+      callbackContext.success(test);
 
       AlertDialogHelper.showDialog(cordova.getActivity(), "Success", "Client transaction ID: " + success.clientTransactionId);
 
