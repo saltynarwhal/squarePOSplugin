@@ -3,6 +3,7 @@ package com.saltynarwhal.cordova.plugin;
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.CordovaInterface;
+import org.apache.cordova.CordovaInterfaceImpl;
 import org.apache.cordova.CordovaActivity;
 import org.apache.cordova.CordovaWebView;
 import org.apache.cordova.PluginResult;
@@ -155,7 +156,7 @@ public class squarePOSplugin extends CordovaPlugin {
     if (resultCode == Activity.RESULT_OK) {
       // Handle success
       ChargeRequest.Success success = posClient.parseChargeSuccess(data);
-      callbackContext.success(data);
+      //callbackContext.success(data);
 
       AlertDialogHelper.showDialog(cordova.getActivity(), "Success", "Client transaction ID: " + success.clientTransactionId);
 
