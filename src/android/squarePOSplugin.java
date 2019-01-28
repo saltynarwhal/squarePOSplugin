@@ -178,7 +178,7 @@ public class squarePOSplugin extends CordovaPlugin {
       // Handle success
       ChargeRequest.Success success = posClient.parseChargeSuccess(data);
 
-      String test = success.clientTransactionId;
+      String test = "success.clientTransactionId";
 
       this.webView.sendPluginResult(new PluginResult(PluginResult.Status.OK, test));
 
