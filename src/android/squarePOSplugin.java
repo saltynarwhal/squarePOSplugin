@@ -166,10 +166,6 @@ public class squarePOSplugin extends CordovaPlugin {
   }
 
   @Override public void onActivityResult(int requestCode, int resultCode, Intent data) {
-    CordovaPlugin callback = this.activityResultCallback;
-    if (callback != null) {
-        callback.onActivityResult(requestCode, resultCode, intent);
-    }
     // Handle unexpected errors
     if (data == null || requestCode != CHARGE_REQUEST_CODE) {
       /*AlertDialogHelper.showDialog(cordova.getActivity(),
@@ -181,7 +177,7 @@ public class squarePOSplugin extends CordovaPlugin {
     if (resultCode == Activity.RESULT_OK) {
       // Handle success
       ChargeRequest.Success success = posClient.parseChargeSuccess(data);
-      callback.success(data);
+      this.callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.OK, data));
 
       AlertDialogHelper.showDialog(cordova.getActivity(), "Success", "Client transaction ID: " + success.clientTransactionId);
 
