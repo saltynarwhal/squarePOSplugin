@@ -124,7 +124,7 @@ public class squarePOSplugin extends CordovaPlugin {
       cordova.setActivityResultCallback (this);
       cordova.startActivityForResult(this, intent, CHARGE_REQUEST_CODE);
 
-      PluginResult r = new PluginResult(PluginResult.Status.NO_RESULT);
+      PluginResult r = new PluginResult(PluginResult.Status.OK);
       r.setKeepCallback(true);
       callbackContext.sendPluginResult(r);
     }
