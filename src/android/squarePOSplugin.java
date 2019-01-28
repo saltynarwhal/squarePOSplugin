@@ -124,7 +124,7 @@ public class squarePOSplugin extends CordovaPlugin {
       cordova.setActivityResultCallback (this);
       cordova.startActivityForResult(this, intent, CHARGE_REQUEST_CODE);
 
-      PluginResult r = new PluginResult(PluginResult.Status.OK);
+      PluginResult r = new PluginResult(PluginResult.Status.NO_RESULT);
       r.setKeepCallback(true);
       callbackContext.sendPluginResult(r);
     }
@@ -136,6 +136,15 @@ public class squarePOSplugin extends CordovaPlugin {
       );
       posClient.openPointOfSalePlayStoreListing();
     }
+  }
+
+  public Bundle onSaveInstanceState() {
+    Bundle state = new Bundle();
+    return state;
+  }
+
+  public void onRestoreStateForActivityResult(Bundle state, CallbackContext callbackContext) {
+    this.callbackContext = callbackContext;
   }
 
   @Override public void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -151,7 +160,7 @@ public class squarePOSplugin extends CordovaPlugin {
     if (resultCode == Activity.RESULT_OK) {
       // Handle success
       ChargeRequest.Success success = posClient.parseChargeSuccess(data);
-      this.callbackContext.success(data);
+      callbackContext.success(data);
 
       AlertDialogHelper.showDialog(cordova.getActivity(), "Success", "Client transaction ID: " + success.clientTransactionId);
 
