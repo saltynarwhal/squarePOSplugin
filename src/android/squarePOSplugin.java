@@ -144,7 +144,6 @@ public class squarePOSplugin extends CordovaPlugin {
   }
 
   public void onRestoreStateForActivityResult(Bundle state, CallbackContext callbackContext) {
-    this.callbackContext = callbackContext;
   }
 
   @Override public void onActivityResult(int requestCode, int resultCode, Intent data) {
