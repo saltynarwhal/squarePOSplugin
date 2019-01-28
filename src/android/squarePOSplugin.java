@@ -3,7 +3,6 @@ package com.saltynarwhal.cordova.plugin;
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.CordovaInterface;
-import org.apache.cordova.CordovaInterfaceImpl;
 import org.apache.cordova.CordovaActivity;
 import org.apache.cordova.CordovaWebView;
 import org.apache.cordova.PluginResult;
@@ -122,12 +121,12 @@ public class squarePOSplugin extends CordovaPlugin {
     try {
       Intent intent = posClient.createChargeIntent(request);
 
-      cordova.setActivityResultCallback (this);
-      cordova.startActivityForResult(this, intent, CHARGE_REQUEST_CODE);
+      setActivityResultCallback (this);
+      startActivityForResult(this, intent, CHARGE_REQUEST_CODE);
 
-      PluginResult r = new PluginResult(PluginResult.Status.NO_RESULT);
+      /*PluginResult r = new PluginResult(PluginResult.Status.NO_RESULT);
       r.setKeepCallback(true);
-      callbackContext.sendPluginResult(r);
+      callbackContext.sendPluginResult(r);*/
     }
     catch (ActivityNotFoundException e) {
       AlertDialogHelper.showDialog(
@@ -139,12 +138,38 @@ public class squarePOSplugin extends CordovaPlugin {
     }
   }
 
-  public Bundle onSaveInstanceState() {}
+  @Override
+  public void setActivityResultCallback(CordovaPlugin plugin) {
+    this.activityResultCallback = plugin;
+  }
 
-  public void onRestoreStateForActivityResult(Bundle state, CallbackContext callbackContext) {}
+  public void startActivityForResult(CordovaPlugin command, Intent intent, int requestCode) {
+    this.activityResultCallback = command;
+    this.activityResultKeepRunning = this.keepRunning;
+
+    // If multitasking turned on, then disable it for activities that return results
+    if (command != null) {
+        this.keepRunning = false;
+    }
+
+    // Start activity
+    super.startActivityForResult(intent, requestCode);
+  }
+
+  public Bundle onSaveInstanceState() {
+    Bundle state = new Bundle();
+    return state;
+  }
+
+  public void onRestoreStateForActivityResult(Bundle state, CallbackContext callbackContext) {
+  }
 
   @Override public void onActivityResult(int requestCode, int resultCode, Intent data) {
-
+    super.onActivityResult(requestCode, resultCode, intent);
+    CordovaPlugin callback = this.activityResultCallback;
+    if (callback != null) {
+        callback.onActivityResult(requestCode, resultCode, intent);
+    }
     // Handle unexpected errors
     if (data == null || requestCode != CHARGE_REQUEST_CODE) {
       /*AlertDialogHelper.showDialog(cordova.getActivity(),
@@ -156,7 +181,7 @@ public class squarePOSplugin extends CordovaPlugin {
     if (resultCode == Activity.RESULT_OK) {
       // Handle success
       ChargeRequest.Success success = posClient.parseChargeSuccess(data);
-      //callbackContext.success(data);
+      callbackContext.success(data);
 
       AlertDialogHelper.showDialog(cordova.getActivity(), "Success", "Client transaction ID: " + success.clientTransactionId);
 
