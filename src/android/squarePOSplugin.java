@@ -77,6 +77,7 @@ public class squarePOSplugin extends CordovaPlugin {
   private static final String APPLICATION_ID = "sq0idp-LtAn6a920ToNj7R4TcKrFA";
   private static final String TAG = "squarePOSplugin";
 
+  public CallbackContext callbackContext;
   private PosClient posClient;
 
   /*protected void onCreate(Bundle savedInstanceState) {
@@ -95,9 +96,14 @@ public class squarePOSplugin extends CordovaPlugin {
   }
 
   public boolean execute(String action, JSONArray args, final CallbackContext callbackContext) throws JSONException {
+    this.callbackContext = callbackContext;
 
     if(action.equals("startTransaction")){
       startTransaction(args, callbackContext);
+
+      PluginResult r = new PluginResult(PluginResult.Status.NO_RESULT);
+      r.setKeepCallback(true);
+      callbackContext.sendPluginResult(r);
 
       return true;
     } else {
@@ -181,7 +187,7 @@ public class squarePOSplugin extends CordovaPlugin {
 
       String test = success.clientTransactionId;
 
-      callbackContext.success(test);
+      this.callbackContext.success(test.toString());
 
       AlertDialogHelper.showDialog(cordova.getActivity(), "Success", "Client transaction ID: " + success.clientTransactionId);
 
