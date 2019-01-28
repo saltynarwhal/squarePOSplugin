@@ -166,7 +166,6 @@ public class squarePOSplugin extends CordovaPlugin {
   }
 
   @Override public void onActivityResult(int requestCode, int resultCode, Intent data) {
-    super.onActivityResult(requestCode, resultCode, intent);
     CordovaPlugin callback = this.activityResultCallback;
     if (callback != null) {
         callback.onActivityResult(requestCode, resultCode, intent);
