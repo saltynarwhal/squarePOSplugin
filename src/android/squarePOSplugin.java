@@ -123,12 +123,11 @@ public class squarePOSplugin extends CordovaPlugin {
       Intent intent = posClient.createChargeIntent(request);
       //intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
 
-      cordova.setActivityResultCallback(this);
-
       PluginResult r = new PluginResult(PluginResult.Status.NO_RESULT);
       r.setKeepCallback(true);
       callbackContext.sendPluginResult(r);
 
+      cordova.setActivityResultCallback(this);
       cordova.startActivityForResult(this, intent, CHARGE_REQUEST_CODE);
     }
     catch (ActivityNotFoundException e) {
