@@ -121,14 +121,17 @@ public class squarePOSplugin extends CordovaPlugin {
     .build();
     try {
       Intent intent = posClient.createChargeIntent(request);
-      intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
+      //intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
 
       cordova.setActivityResultCallback(this);
-      cordova.startActivityForResult(this, intent, CHARGE_REQUEST_CODE);
 
       PluginResult r = new PluginResult(PluginResult.Status.NO_RESULT);
       r.setKeepCallback(true);
       callbackContext.sendPluginResult(r);
+
+      cordova.startActivityForResult(this, intent, CHARGE_REQUEST_CODE);
+
+      return true;
     }
     catch (ActivityNotFoundException e) {
       AlertDialogHelper.showDialog(
@@ -179,9 +182,9 @@ public class squarePOSplugin extends CordovaPlugin {
       // Handle success
       ChargeRequest.Success success = posClient.parseChargeSuccess(data);
 
-      String test = "success.clientTransactionId";
+      String test = success.clientTransactionId;
 
-      this.webView.sendPluginResult(new PluginResult(PluginResult.Status.OK, test));
+      this.callbackContext.success(test);
 
       AlertDialogHelper.showDialog(cordova.getActivity(), "Success", "Client transaction ID: " + success.clientTransactionId);
 
