@@ -138,13 +138,9 @@ public class squarePOSplugin extends CordovaPlugin {
     }
   }
 
-  public Bundle onSaveInstanceState() {
-    Bundle state = new Bundle();
-    return state;
-  }
+  public Bundle onSaveInstanceState() {}
 
-  public void onRestoreStateForActivityResult(Bundle state, CallbackContext callbackContext) {
-  }
+  public void onRestoreStateForActivityResult(Bundle state, CallbackContext callbackContext) {}
 
   @Override public void onActivityResult(int requestCode, int resultCode, Intent data) {
 
