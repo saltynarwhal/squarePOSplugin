@@ -195,8 +195,8 @@ public class squarePOSplugin extends CordovaPlugin {
       // Handle expected errors
       ChargeRequest.Error error = posClient.parseChargeError(data);
 
-      AlertDialogHelper.showDialog(cordova.getActivity(), "Error" + error.code, "Client transaction ID: " + error.debugDescription);
-
+      //AlertDialogHelper.showDialog(cordova.getActivity(), "Error" + error.code, "Client transaction ID: " + error.debugDescription);
+      this.callbackContext.error(error.debugDescription)
     }
     return;
   }
