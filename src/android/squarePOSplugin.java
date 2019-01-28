@@ -139,7 +139,7 @@ public class squarePOSplugin extends CordovaPlugin {
   }
 
 
-    @Override public void setActivityResultCallback(CordovaPlugin plugin) {
+  @Override public void setActivityResultCallback(CordovaPlugin plugin) {
     this.activityResultCallback = plugin;
   }
 
