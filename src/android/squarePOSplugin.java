@@ -117,13 +117,17 @@ public class squarePOSplugin extends CordovaPlugin {
   public void startTransaction(JSONArray args, CallbackContext callbackContext) throws JSONException {
     //get jobid and amount
     JSONObject options = args.getJSONObject(0);
-    int jobId = options.getInt("jobid");
+    String jobId = options.getString("jobid");
     int amount = options.getInt("amount");
+    String customerId = options.getString("customerid");
 
     //build intent and execute app switch if Square POS is on the device
     ChargeRequest request = new ChargeRequest.Builder(
     amount,
     CurrencyCode.USD)
+    .note(jobId)
+    .customerId(customerId)
+    .requestMetadata(jobId)
     .build();
     try {
       Intent intent = posClient.createChargeIntent(request);
@@ -185,9 +189,9 @@ public class squarePOSplugin extends CordovaPlugin {
       // Handle success
       ChargeRequest.Success success = posClient.parseChargeSuccess(data);
 
-      String test = success.clientTransactionId;
+      //String test = success.clientTransactionId;
 
-      this.callbackContext.success(test.toString());
+      this.callbackContext.success(success);
 
       AlertDialogHelper.showDialog(cordova.getActivity(), "Success", "Client transaction ID: " + success.clientTransactionId);
 
