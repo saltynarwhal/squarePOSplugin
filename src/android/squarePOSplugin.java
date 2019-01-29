@@ -190,15 +190,15 @@ public class squarePOSplugin extends CordovaPlugin {
       ChargeRequest.Success success = posClient.parseChargeSuccess(data);
 
       //create JSONObject to pass back to outsystems Application
-      JSONObject resultObj = new JSONObject();
+      /*JSONObject resultObj = new JSONObject();
 
       resultObj.put("clientTransactionId", success.clientTransactionId);
       resultObj.put("requestMetadata", success.requestMetadata);
-      resultObj.put("serverTransactionId", success.serverTransactionId);
+      resultObj.put("serverTransactionId", success.serverTransactionId);*/
 
       //String test = success.clientTransactionId;
 
-      this.callbackContext.success(resultObj);
+      this.callbackContext.success(success.clientTransactionId);
 
       //AlertDialogHelper.showDialog(cordova.getActivity(), "Success", "Client transaction ID: " + success.clientTransactionId);
 
