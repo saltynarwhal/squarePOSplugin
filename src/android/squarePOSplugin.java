@@ -176,7 +176,7 @@ public class squarePOSplugin extends CordovaPlugin {
   public void onRestoreStateForActivityResult(Bundle state, CallbackContext callbackContext) {
   }
 
-  @Override public void onActivityResult(int requestCode, int resultCode, Intent data) throws JSONException {
+  @Override public void onActivityResult(int requestCode, int resultCode, Intent data) {
     // Handle unexpected errors
     if (data == null || requestCode != CHARGE_REQUEST_CODE) {
       /*AlertDialogHelper.showDialog(cordova.getActivity(),
