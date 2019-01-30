@@ -77,15 +77,9 @@ public class squarePOSplugin extends CordovaPlugin {
   private static final String APPLICATION_ID = "sq0idp-LtAn6a920ToNj7R4TcKrFA";
   private static final String TAG = "squarePOSplugin";
 
+  //initialize callback to use in onActivityResult
   public CallbackContext callbackContext;
   private PosClient posClient;
-
-  /*protected void onCreate(Bundle savedInstanceState) {
-    super.onCreate(savedInstanceState);
-    setContentView(R.layout.main_activity);
-    // Replace APPLICATION_ID with a Square-assigned application ID
-    posClient = PosSdk.createClient(this, APPLICATION_ID);
-  }*/
 
   public void initialize(CordovaInterface cordova, CordovaWebView webView) {
     super.initialize(cordova, webView);
@@ -131,7 +125,6 @@ public class squarePOSplugin extends CordovaPlugin {
     .build();
     try {
       Intent intent = posClient.createChargeIntent(request);
-      //intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
 
       PluginResult r = new PluginResult(PluginResult.Status.NO_RESULT);
       r.setKeepCallback(true);
@@ -143,28 +136,10 @@ public class squarePOSplugin extends CordovaPlugin {
     catch (ActivityNotFoundException e) {
 
       this.callbackContext.error("Square Point of Sale is not installed");
-      
+
       posClient.openPointOfSalePlayStoreListing();
     }
   }
-
-
-  /*public void setActivityResultCallback(CordovaPlugin plugin) {
-    this.activityResultCallback = plugin;
-  }
-
-  public void startActivityForResult(CordovaPlugin command, Intent intent, int requestCode) {
-    this.activityResultCallback = command;
-    this.activityResultKeepRunning = this.keepRunning;
-
-    // If multitasking turned on, then disable it for activities that return results
-    if (command != null) {
-        this.keepRunning = false;
-    }
-
-    // Start activity
-    super.startActivityForResult(intent, requestCode);
-  }*/
 
   public Bundle onSaveInstanceState() {
     Bundle state = new Bundle();
