@@ -141,11 +141,9 @@ public class squarePOSplugin extends CordovaPlugin {
       cordova.startActivityForResult(this, intent, CHARGE_REQUEST_CODE);
     }
     catch (ActivityNotFoundException e) {
-      AlertDialogHelper.showDialog(
-        cordova.getActivity(),
-        "Error",
-        "Square Point of Sale is not installed"
-      );
+
+      this.callbackContext.error("Square Point of Sale is not installed");
+      
       posClient.openPointOfSalePlayStoreListing();
     }
   }
@@ -179,8 +177,7 @@ public class squarePOSplugin extends CordovaPlugin {
   @Override public void onActivityResult(int requestCode, int resultCode, Intent data) {
     // Handle unexpected errors
     if (data == null || requestCode != CHARGE_REQUEST_CODE) {
-      /*AlertDialogHelper.showDialog(cordova.getActivity(),
-        "Error: unknown", "Square Point of Sale was uninstalled or stopped working");*/
+
       return;
     }
 
@@ -200,13 +197,10 @@ public class squarePOSplugin extends CordovaPlugin {
 
       this.callbackContext.success(success.serverTransactionId);
 
-      //AlertDialogHelper.showDialog(cordova.getActivity(), "Success", "Client transaction ID: " + success.clientTransactionId);
-
     } else {
       // Handle expected errors
       ChargeRequest.Error error = posClient.parseChargeError(data);
 
-      //AlertDialogHelper.showDialog(cordova.getActivity(), "Error" + error.code, "Client transaction ID: " + error.debugDescription);
       this.callbackContext.error(error.debugDescription);
     }
     return;
