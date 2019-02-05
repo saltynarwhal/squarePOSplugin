@@ -26,7 +26,6 @@
         pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR];
     }
 
-
     [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
 }
 
