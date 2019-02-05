@@ -5,18 +5,29 @@
 
 @implementation Echo
 
-- (void)startTransaction:(CDVInvokedUrlCommand*)command
-{
+- (void)startTransaction:(CDVInvokedUrlCommand*)command {
     CDVPluginResult* pluginResult = nil;
-    NSString* echo = [command.arguments objectAtIndex:0];
+    // Replace with your app's callback URL.
+    // Note: You can retrieve this value from Info.plist
+    NSURL *const callbackURL = [NSURL URLWithString:squarePOSplugin];
 
-    if (echo != nil && [echo length] > 0) {
-        pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:echo];
-    } else {
-        pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR];
-    }
+    // Specify the amount of money to charge.
+    SCCMoney *const amount = [SCCMoney moneyWithAmountCents:100 currencyCode:@"USD" error:NULL];
 
-    [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
+    // Your client ID is the same as your Square Application ID.
+    // Note: You only need to set your client ID once, before creating your first request.
+    [SCCAPIRequest setClientID:YOUR_CLIENT_ID];
+
+    SCCAPIRequest *request = [SCCAPIRequest requestWithCallbackURL:callbackURL
+                                        amount:amount
+                                        userInfoString:nil
+                                        merchantID:nil
+                                        notes:@"Coffee"
+                                        customerID:nil
+                                        supportedTenderTypes:SCCAPIRequestTenderTypeAll
+                                        clearsDefaultFees:NO
+                                        returnAutomaticallyAfterPayment:NO
+                                        error:&error];
 }
 
 @end
