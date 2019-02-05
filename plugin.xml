@@ -18,16 +18,58 @@
     <js-module src="www/squarePOSplugin.js" name="squarePOSplugin">
         <clobbers target="window.plugins.squarePOSplugin" />
     </js-module>
+
     <platform name="android">
+
         <config-file target="res/xml/config.xml" parent="/*">
             <feature name="squarePOSplugin">
                 <param name="android-package" value="com.saltynarwhal.cordova.plugin.squarePOSplugin"/>
             </feature>
         </config-file>
+
         <framework src="src/android/config.gradle" custom="true" type="gradleReference" />
         <framework src="com.android.support:appcompat-v7:25.3.1" />
         <framework src="com.android.support:support-v4:27.0.1" />
         <source-file src="src/android/squarePOSplugin.java" target-dir="src/com/saltynarwhal/cordova/plugin" />
         <source-file src="src/android/AlertDialogHelper.java" target-dir="src/com/saltynarwhal/cordova/plugin" />
+
+    </platform>
+
+    <platform name="ios">
+
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="squarePOSplugin">
+                <param name="ios-package" value="CDVsquarePOSplugin"/>
+                <param name="onload" value="true" />
+            </feature>
+        </config-file>
+        <header-file src="src/ios/CDVsquarePOSplugin.h" />
+        <source-file src="src/ios/CDVsquarePOSplugin.m" />
+
+        <framework src="SquarePointOfSaleSDK" type="podspec" spec="~> 1.2.0" />
+
+        <config-file target="*-Info.plist">
+          <key>LSApplicationQueriesSchemes</key>
+          <array>
+            <string>square-commerce-v1</string>
+          </array>
+        </config-file>
+
+        <config-file target="*-Info.plist" parent="CFBundleURLTypes">
+          <array>
+            <dict>
+              <key>CFBundleTypeRole</key>
+              <string>Editor</string>
+              <key>CFBundleURLName</key>
+              <string>com.yesco.serviziofieldservice</string>
+              <key>CFBundleURLSchemes</key>
+              <array>
+                <string>squarePOSplugin</string>
+              </array>
+            </dict>
+          </array>
+        </config-file>
+
+        <source-file src="src/android/squarePOSplugin.java" target-dir="src/com/saltynarwhal/cordova/plugin" />
     </platform>
 </plugin>

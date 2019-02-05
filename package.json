@@ -1,11 +1,12 @@
 {
   "name": "cordova-plugin-squarePOS",
   "version": "0.0.1",
-  "description": "An Android Cordova plugin that allows users to generate a square transaction that can be completed in the Square POS. Will return transaction details.",
+  "description": "An Andoid and ios Cordova plugin that allows users to generate a square transaction that can be completed in the Square POS. Will return transaction details.",
   "cordova": {
     "id": "cordova-plugin-squarePOS",
     "platforms": [
-      "android"
+      "android",
+      "ios"
     ]
   },
   "repository": {
@@ -14,7 +15,11 @@
   },
   "keywords": [
     "ecosystem:cordova",
-    "cordova-android"
+    "cordova-android",
+    "cordova-ios",
+    "square",
+    "square pos api",
+    "squareposapi"
   ],
   "engines": [
     {
