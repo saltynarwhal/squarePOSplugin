@@ -3,7 +3,9 @@
 #import "squarePOSplugin.h"
 #import <Cordova/CDVPlugin.h>
 
-@implementation Echo
+@import SquarePointOfSaleSDK;
+
+@implementation squarePOSplugin
 
 - (void)startTransaction:(CDVInvokedUrlCommand*)command {
     CDVPluginResult* pluginResult = nil;
@@ -13,8 +15,11 @@
 
     NSURL *const callbackURL = [NSURL URLWithString:squarePOSpluginURL];
 
+    NSInteger* argsAmount = [command.arguments objectAtIndex:1];
+
+
     // Specify the amount of money to charge.
-    SCCMoney *const amount = [SCCMoney moneyWithAmountCents:100 currencyCode:@"USD" error:NULL];
+    SCCMoney *const amount = [SCCMoney moneyWithAmountCents:argsAmount currencyCode:@"USD" error:NULL];
 
     // Your client ID is the same as your Square Application ID.
     // Note: You only need to set your client ID once, before creating your first request.
@@ -33,7 +38,6 @@
 
     //send the transaction to the Square Point of Sale app
     BOOL success = [SCCAPIConnection performRequest:request error:&error];
-
 }
 
 - (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<NSString *,id> *)options; {
