@@ -40,6 +40,7 @@
     BOOL success = [SCCAPIConnection performRequest:request error:&error];
 }
 
+//open the original application and process the result of the square POS
 - (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<NSString *,id> *)options; {
     NSString *const sourceApplication = options[UIApplicationOpenURLOptionsSourceApplicationKey];
     // Make sure the URL comes from Square Point of Sale; fail if it doesn't.
@@ -58,10 +59,12 @@
     } else if (decodeError) {
       //Print decode error
         NSLog(@"Decode Error: %@", decodeError);
+        pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:@"Decode Error"];
     }
     else {
       //Print the error code
         NSLog(@"Request failed: %@", response.error);
+        pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:@"Request failed"];
     }
 
     return YES;
