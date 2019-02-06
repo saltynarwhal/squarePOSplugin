@@ -43,8 +43,8 @@
                 <param name="onload" value="true" />
             </feature>
         </config-file>
-        <header-file src="src/ios/CDVsquarePOSplugin.h" />
-        <source-file src="src/ios/CDVsquarePOSplugin.m" />
+        <header-file src="src/ios/squarePOSplugin.h" />
+        <source-file src="src/ios/squarePOSplugin.m" />
 
         <framework src="SquarePointOfSaleSDK" type="podspec" spec="~> 1.2.0" />
 
