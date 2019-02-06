@@ -120,7 +120,6 @@ public class squarePOSplugin extends CordovaPlugin {
     amount,
     CurrencyCode.USD)
     .note(jobId)
-    .customerId(customerId)
     .requestMetadata(jobId)
     .build();
     try {
