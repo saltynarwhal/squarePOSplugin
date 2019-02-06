@@ -9,7 +9,7 @@
     CDVPluginResult* pluginResult = nil;
     // Replace with your app's callback URL.
     // Note: You can retrieve this value from Info.plist
-    NSString *squarePOSpluginURL = @"squarePOSplugin://"
+    NSString *squarePOSpluginURL = @"squarePOSplugin://";
 
     NSURL *const callbackURL = [NSURL URLWithString:squarePOSpluginURL];
 
