@@ -55,6 +55,7 @@
     if (response.isSuccessResponse) {
       //Print checkout object
       NSLog(@"Transaction successful: %@", response);
+      pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:options.serverTransactionId];
 
     } else if (decodeError) {
       //Print decode error
