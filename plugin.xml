@@ -35,7 +35,7 @@
 
     </platform>
 
-    <platform name="ios">
+    <!<platform name="ios">
 
         <config-file target="res/xml/config.xml" parent="/*">
             <feature name="squarePOSplugin">
@@ -70,6 +70,5 @@
           </array>
         </config-file>
 
-        <source-file src="src/android/squarePOSplugin.java" target-dir="src/com/saltynarwhal/cordova/plugin" />
     </platform>
 </plugin>
