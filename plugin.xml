@@ -47,7 +47,7 @@
         <header-file src="src/ios/squarePOSplugin.h" />
         <source-file src="src/ios/squarePOSplugin.m" />
 
-        <framework src="SquarePointOfSaleSDK" type="podspec" />
+        //<framework src="SquarePointOfSaleSDK" type="podspec" />
 
         <config-file target="*-Info.plist">
           <key>LSApplicationQueriesSchemes</key>
