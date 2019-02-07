@@ -4,7 +4,7 @@
         id="cordova-plugin-squarePOS" version="0.0.1">
     <name>squarePOSplugin</name>
 
-    <description>An Android Cordova plugin that allows users to generate a square transaction that can be completed in the Square POS. Will return transaction details.</description>
+    <description>An Cordova plugin that allows users to generate a square transaction that can be completed in the Square POS. Will return transaction details.</description>
     <license>MIT</license>
 
     <keywords>cordova,android,PCI,square,POS,mobilepayments,payments,credit,creditcard</keywords>
