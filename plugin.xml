@@ -37,9 +37,9 @@
 
     <platform name="ios">
 
-        <config-file target="res/xml/config.xml" parent="/*">
+        <config-file target="config.xml" parent="/*">
             <feature name="squarePOSplugin">
-                <param name="ios-package" value="CDVsquarePOSplugin"/>
+                <param name="ios-package" value="squarePOSplugin"/>
                 <param name="onload" value="true" />
             </feature>
         </config-file>
