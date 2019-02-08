@@ -3,7 +3,7 @@
 #import "squarePOSplugin.h"
 #import <Cordova/CDVPlugin.h>
 
-//@import SquarePointOfSaleSDK;
+@import SquarePointOfSaleSDK;
 
 @implementation squarePOSplugin
 
