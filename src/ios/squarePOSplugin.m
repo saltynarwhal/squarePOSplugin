@@ -6,11 +6,12 @@
 @import SquarePointOfSaleSDK;
 
 @implementation squarePOSplugin
-CDVPluginResult *pluginResult = nil;
+
 
 - (void)startTransaction:(CDVInvokedUrlCommand*)command {
     // Replace with your app's callback URL.
     // Note: You can retrieve this value from Info.plist
+    CDVPluginResult *pluginResult = nil;
     NSString *squarePOSpluginURL = @"squarePOSplugin://";
 
     NSURL *const callbackURL = [NSURL URLWithString:squarePOSpluginURL];
@@ -39,7 +40,7 @@ CDVPluginResult *pluginResult = nil;
     //send the transaction to the Square Point of Sale app
     BOOL success = [SCCAPIConnection performRequest:request error:&error];
 }
-
+/*
 //open the original application and process the result of the square POS
 - (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<NSString *,id> *)options; {
     NSString *const sourceApplication = options[UIApplicationOpenURLOptionsSourceApplicationKey];
@@ -69,6 +70,6 @@ CDVPluginResult *pluginResult = nil;
     }
 
     return YES;
-}
+}*/
 
 @end
