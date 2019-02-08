@@ -29,6 +29,10 @@
     {
       "name": "cordova-cli",
       "version": ">=6.4.0"
+    },
+    {
+      "name": "cordova-ios",
+      "version": ">=4.5.5"
     }
   ],
   "author": "Jordan Strong <jstrong@yesco.com>",
