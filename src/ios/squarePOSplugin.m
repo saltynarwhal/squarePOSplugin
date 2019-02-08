@@ -15,7 +15,7 @@
 
     NSURL *const callbackURL = [NSURL URLWithString:squarePOSpluginURL];
 
-    NSInteger *argsAmount = [command.arguments objectAtIndex:1];
+    NSInteger* argsAmount = [command.arguments objectAtIndex:1];
 
 
     // Specify the amount of money to charge.
