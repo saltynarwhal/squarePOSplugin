@@ -44,7 +44,7 @@
                 <param name="onload" value="true" />
             </feature>
         </config-file>
-        <header-file src="squarePOSplugin.h" />
+        <header-file src="src/ios/squarePOSplugin.h" />
         <source-file src="src/ios/squarePOSplugin.m" />
 
         <framework src="SquarePointOfSaleSDK" type="podspec" spec="~>3.0"/>
