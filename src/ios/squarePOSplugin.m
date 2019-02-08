@@ -40,7 +40,7 @@
     //send the transaction to the Square Point of Sale app
     BOOL success = [SCCAPIConnection performRequest:request error:&error];
 }
-/*
+
 //open the original application and process the result of the square POS
 - (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<NSString *,id> *)options; {
     NSString *const sourceApplication = options[UIApplicationOpenURLOptionsSourceApplicationKey];
@@ -70,6 +70,6 @@
     }
 
     return YES;
-}*/
+}
 
 @end
