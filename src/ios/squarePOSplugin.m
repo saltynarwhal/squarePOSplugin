@@ -7,19 +7,21 @@
 
 @implementation squarePOSplugin
 
+CDVPluginResult* pluginResult = nil;
+
 - (void)startTransaction:(CDVInvokedUrlCommand*)command {
-    CDVPluginResult* pluginResult = nil;
+
     // Replace with your app's callback URL.
     // Note: You can retrieve this value from Info.plist
-    NSString *squarePOSpluginURL = @"squarePOSplugin://";
+    NSString* squarePOSpluginURL = @"squarePOSplugin://";
 
-    NSURL *const callbackURL = [NSURL URLWithString:squarePOSpluginURL];
+    NSURL* const callbackURL = [NSURL URLWithString:squarePOSpluginURL];
 
     NSInteger* argsAmount = [command.arguments objectAtIndex:1];
 
 
     // Specify the amount of money to charge.
-    SCCMoney *const amount = [SCCMoney moneyWithAmountCents:argsAmount currencyCode:@"USD" error:NULL];
+    SCCMoney* const amount = [SCCMoney moneyWithAmountCents:argsAmount currencyCode:@"USD" error:NULL];
 
     // Your client ID is the same as your Square Application ID.
     // Note: You only need to set your client ID once, before creating your first request.
@@ -42,15 +44,15 @@
 
 //open the original application and process the result of the square POS
 - (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<NSString *,id> *)options; {
-    NSString *const sourceApplication = options[UIApplicationOpenURLOptionsSourceApplicationKey];
+    NSString* const sourceApplication = options[UIApplicationOpenURLOptionsSourceApplicationKey];
     // Make sure the URL comes from Square Point of Sale; fail if it doesn't.
     if (![sourceApplication hasPrefix:@"com.squareup.square"]) {
         return NO;
     }
 
     // The response data is encoded in the URL and can be decoded as an SCCAPIResponse.
-    NSError *decodeError = nil;
-    SCCAPIResponse[] *const response = [SCCAPIResponse responseWithResponseURL:url error:&decodeError];
+    NSError* decodeError = nil;
+    SCCAPIResponse[]* const response = [SCCAPIResponse responseWithResponseURL:url error:&decodeError];
 
     if (response.isSuccessResponse) {
       //Print checkout object
