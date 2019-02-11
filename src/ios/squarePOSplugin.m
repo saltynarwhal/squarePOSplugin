@@ -1,21 +1,26 @@
-/********* squarePOSplugin.m Cordova Plugin Implementation *******/
-
 #import "squarePOSplugin.h"
-#import <Cordova/CDVPlugin.h>
-#import <Cordova/CDVAvailability>
+
+#import <Cordova/CDVAvailability.h>
 
 @implementation squarePOSplugin
 
 - (void)pluginInitialize {
-
 }
 
-- (void)startTransaction:(CDVInvokedUrlCommand*)command {
-  CDVPluginResult* pluginResult = nil;
-
-  pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:echo];
-
-  [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
+- (void)echo:(CDVInvokedUrlCommand *)command {
+  NSString* phrase = [command.arguments objectAtIndex:0];
+  NSLog(@"%@", phrase);
 }
 
-@end
+- (void)getDate:(CDVInvokedUrlCommand *)command {
+  NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+  NSLocale *enUSPOSIXLocale = [NSLocale localeWithLocaleIdentifier:@"en_US_POSIX"];
+  [dateFormatter setLocale:enUSPOSIXLocale];
+  [dateFormatter setDateFormat:@"yyy-MM-dd'T'HH:mm:ssZZZZZ"];
+
+  NSDate *now = [NSDate date];
+  NSString *iso8601String = [dateFormatter stringFromDate:now];
+
+  CDVPluginResult *result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:iso8601String];
+  [self.commandDelagate sendPluginResult:result callbackId:command.callbackId];
+}

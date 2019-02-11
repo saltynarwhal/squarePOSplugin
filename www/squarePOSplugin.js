@@ -11,6 +11,16 @@ squarePOSplugin.prototype.startTransaction = function(jobid, amount, customerid,
   cordova.exec(successCallback, errorCallback, 'squarePOSplugin', 'startTransaction', [options]);
 }
 
+squarePOSplugin.prototype.echo = function(phrase, successCallback, errorCallback) {
+  var options = {};
+  options.phrase = phrase;
+  cordova.exec(successCallback, errorCallback, 'squarePOSplugin', 'startTransaction', [options]);
+}
+
+squarePOSplugin.prototype.getDate = function(successCallback, errorCallback) {
+  cordova.exec(successCallback, errorCallback, 'squarePOSplugin', 'startTransaction');
+}
+
 // Installation constructor that binds ToastyPlugin to window
 squarePOSplugin.install = function() {
   if (!window.plugins) {
