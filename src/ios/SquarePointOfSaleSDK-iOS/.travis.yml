@@ -1,0 +1,7 @@
+language: objective-c
+osx_image: xcode9.4
+rvm: 2.2.2
+before_script:
+    - bundle install
+script:
+    - bundle exec pod lib lint --verbose --fail-fast --allow-warnings
