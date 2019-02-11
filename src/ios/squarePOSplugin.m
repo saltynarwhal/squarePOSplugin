@@ -2,6 +2,7 @@
 
 #import "squarePOSplugin.h"
 #import <Cordova/CDVPlugin.h>
+#import <Cordova/CDVAvailability>
 
 @implementation squarePOSplugin
 
