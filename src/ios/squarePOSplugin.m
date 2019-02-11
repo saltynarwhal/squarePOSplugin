@@ -3,12 +3,12 @@
 #import "squarePOSplugin.h"
 #import <Cordova/CDVPlugin.h>
 
-@import SquarePointOfSaleSDK;
+//@import SquarePointOfSaleSDK;
 
 @implementation squarePOSplugin
 
 
-- (void)startTransaction:(CDVInvokedUrlCommand*)command {
+- (void)startTransaction:(CDVInvokedUrlCommand*)command {/*
     // Replace with your app's callback URL.
     // Note: You can retrieve this value from Info.plist
     CDVPluginResult *pluginResult = nil;
@@ -69,7 +69,7 @@
         pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:@"Request failed"];
     }
 
-    return YES;
+    return YES;*/
 }
 
 @end
