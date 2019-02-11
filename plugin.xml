@@ -39,7 +39,7 @@
 
         <config-file target="config.xml" parent="/*">
             <feature name="squarePOSplugin">
-                <param name="ios-package" value="squarePOSplugin" onload="true"/>
+                <param name="ios-package" value="squarePOSplugin" onload="true"/> 
             </feature>
         </config-file>
         <header-file src="src/ios/squarePOSplugin.h" />

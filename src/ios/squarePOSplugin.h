@@ -4,6 +4,6 @@
 
 @interface squarePOSplugin : CDVPlugin
 
-- (void)startTransaction:(CDVInvokedUrlCommand*)command;
+- (void)startTransaction:(CDVInvokedUrlCommand*)command; 
 
 @end
