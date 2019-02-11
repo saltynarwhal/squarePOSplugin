@@ -5,6 +5,9 @@
 
 @implementation squarePOSplugin
 
+- (void)pluginInitialize {
+
+}
 
 - (void)startTransaction:(CDVInvokedUrlCommand*)command {
   CDVPluginResult* pluginResult = nil;
