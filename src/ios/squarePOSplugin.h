@@ -2,7 +2,7 @@
 
 #import <Cordova/CDVPlugin.h>
 
-@interface squarePOSplugin : CDVPlugin
+@interface squarePOSplugin : CDVPlugin {}
 
 - (void)startTransaction:(CDVInvokedUrlCommand*)command;
 
