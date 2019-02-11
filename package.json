@@ -24,15 +24,7 @@
   "engines": [
     {
       "name": "cordova",
-      "version": ">=6.0.0"
-    },
-    {
-      "name": "cordova-cli",
-      "version": ">=6.4.0"
-    },
-    {
-      "name": "cordova-ios",
-      "version": ">=4.5.5"
+      "version": ">=3.0.0"
     }
   ],
   "author": "Jordan Strong <jstrong@yesco.com>",

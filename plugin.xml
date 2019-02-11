@@ -12,8 +12,7 @@
     <issue>https://github.com/saltynarwhal/squarePOSplugin/issues</issue>
 
     <engines>
-      <engine name="cordova" version=">=6.0.0"/>
-      <engine name="cordova" version=">=4.5.5"/>
+      <engine name="cordova" version=">=3.0.0"/>
     </engines>
 
     <js-module src="www/squarePOSplugin.js" name="squarePOSplugin">
@@ -41,7 +40,6 @@
         <config-file target="res/xml/config.xml" parent="/*">
             <feature name="squarePOSplugin">
                 <param name="ios-package" value="squarePOSplugin"/>
-                <param name="onload" value="true" />
             </feature>
         </config-file>
         <header-file src="src/ios/squarePOSplugin.h" />
