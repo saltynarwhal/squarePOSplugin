@@ -43,9 +43,6 @@
             </feature>
         </config-file>
 
-        <preference name="webviewbounce" value="false" />
-        <preference name="UIWebViewBounce" value="false" />
-
         <header-file src="src/ios/squarePOSplugin.h" />
         <source-file src="src/ios/squarePOSplugin.m" />
 
