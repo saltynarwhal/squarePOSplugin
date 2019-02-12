@@ -16,7 +16,7 @@
 
   pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:@"worked"];
 
-  [self.commandDelegate sendPluginResult:pluginResult callbackId:callbackId;
+  [self.commandDelegate sendPluginResult:pluginResult callbackId:callbackId];
 }
 
 @end
