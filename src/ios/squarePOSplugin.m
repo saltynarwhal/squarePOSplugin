@@ -1,7 +1,6 @@
 /********* squarePOSplugin.m Cordova Plugin Implementation *******/
 
 #import "squarePOSplugin.h"
-#import <Cordova/CDVPluginResult.h>
 
 @interface squarePOSplugin ()
 
