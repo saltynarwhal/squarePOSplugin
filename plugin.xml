@@ -67,6 +67,19 @@
           </array>
         </config-file>
 
+        <framework src="Accelerate.framework"/>
+        <framework src="AudioToolbox.framework"/>
+        <framework src="AVFoundation.framework"/>
+        <framework src="CoreGraphics.framework"/>
+        <framework src="CoreMedia.framework"/>
+        <framework src="CoreVideo.framework"/>
+        <framework src="Foundation.framework"/>
+        <framework src="MobileCoreServices.framework"/>
+        <framework src="OpenGLES.framework"/>
+        <framework src="QuartzCore.framework"/>
+        <framework src="Security.framework"/>
+        <framework src="UIKit.framework"/>
+        <framework src="libc++.dylib"/>
     </platform>
 
 </plugin>
