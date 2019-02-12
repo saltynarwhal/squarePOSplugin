@@ -1,7 +1,11 @@
 /********* squarePOSplugin.m Cordova Plugin Implementation *******/
+#import <Cordova/CDVPlugin.h>
 
-#import "squarePOSplugin.h"
-#import <Cordova/CDVPluginResult.h>
+@interface squarePOSplugin : CDVPlugin
+
+- (void)startTransaction:(CDVInvokedUrlCommand*)command;
+
+@end
 
 @interface squarePOSplugin ()
 

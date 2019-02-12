@@ -43,7 +43,6 @@
             </feature>
         </config-file>
 
-        <header-file src="src/ios/squarePOSplugin.h" />
         <source-file src="src/ios/squarePOSplugin.m" />
 
         <config-file target="*-Info.plist">
