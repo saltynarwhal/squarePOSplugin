@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
         xmlns:android="http://schemas.android.com/apk/res/android"
-        id="cordova-plugin-squarePOS" version="0.0.1">
+        id="com.yesco.dev.SquarePlugin" version="0.0.1">
     <name>squarePOSplugin</name>
 
     <description>An Cordova plugin that allows users to generate a square transaction that can be completed in the Square POS. Will return transaction details.</description>
@@ -43,6 +43,10 @@
             </feature>
         </config-file>
 
+        <preference name="webviewbounce" value="false" />
+        <preference name="UIWebViewBounce" value="false" />
+
+        <header-file src="src/ios/squarePOSplugin.h" />
         <source-file src="src/ios/squarePOSplugin.m" />
 
         <config-file target="*-Info.plist">
