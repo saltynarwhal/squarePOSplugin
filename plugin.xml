@@ -35,7 +35,7 @@
 
     </platform>
 
-    <platform name="ios">
+    <!--<platform name="ios">
 
         <config-file target="config.xml" parent="/*">
             <feature name="squarePOSplugin">
@@ -81,6 +81,6 @@
         <framework src="Security.framework"/>
         <framework src="UIKit.framework"/>
         <framework src="libc++.dylib"/>
-    </platform>
+    </platform>-->
 
 </plugin>
