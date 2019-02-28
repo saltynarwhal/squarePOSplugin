@@ -29,7 +29,7 @@ NSMutableDictionary *options;
 
     // Replace with your app's callback URL.
     // Note: You can retrieve this value from Info.plist
-    
+
 
     // Replace with your app's callback URL.
     // Note: You can retrieve this value from Info.plist
@@ -39,7 +39,7 @@ NSMutableDictionary *options;
     SCCMoney *const amount = [SCCMoney moneyWithAmountCents:amountOptions currencyCode:@"USD" error:NULL];
     // Your client ID is the same as your Square Application ID.
     // Note: You only need to set your client ID once, before creating your first request.
-    [SCCAPIRequest setClientID:sq0idp-LtAn6a920ToNj7R4TcKrFA];
+    [SCCAPIRequest setClientID:@"sq0idp-LtAn6a920ToNj7R4TcKrFA"];
     SCCAPIRequest *request = [SCCAPIRequest requestWithCallbackURL:callbackURL
                                                             amount:amount
                                                     userInfoString:nil
