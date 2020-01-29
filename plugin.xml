@@ -58,7 +58,7 @@
                     <key>CFBundleTypeRole</key>
                     <string>Editor</string>
                     <key>CFBundleURLName</key>
-                    <string>com.yesco.serviziofieldservice</string>
+                    <string>com.yesco.ServizioFieldService</string>
                     <key>CFBundleURLSchemes</key>
                     <array>
                         <string>squarePOSplugin</string>

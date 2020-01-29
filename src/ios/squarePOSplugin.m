@@ -19,7 +19,8 @@ NSMutableDictionary *options;
     int amountOptions = [(NSNumber *)[options objectForKey:@"amount"] intValue];
     NSString *customerId = [options objectForKey:@"customerid"];
     NSError *error = nil;
-    NSString *squarePOSpluginURL = @"squarePOSplugin://";
+    //NSString *squarePOSpluginURL = @"squarePOSplugin://";
+    NSString *squarePOSpluginURL = [[NSBundle mainBundle] objectForInfoDictionaryKey:CFBundleURLName];
 
     CDVPluginResult *pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_NO_RESULT];
     //Maintain callback
@@ -65,7 +66,7 @@ NSMutableDictionary *options;
 
 }
 
-- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<NSString *,id> *)options
+- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<NSString *,id> *)options;
 {
     NSString *const sourceApplication = options[UIApplicationOpenURLOptionsSourceApplicationKey];
     // Make sure the URL comes from Square Point of Sale; fail if it doesn't.
