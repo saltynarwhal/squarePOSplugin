@@ -4,6 +4,7 @@
 @interface squarePOSplugin ()
 
 @property (strong, nonatomic) NSString *extractedImage;
+@property(nonatomic, assign) id<UIApplicationDelegate> delegate;
 
 @end
 
