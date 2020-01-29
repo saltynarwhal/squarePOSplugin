@@ -22,12 +22,6 @@ NSMutableDictionary *options;
     NSError *error = nil;
     NSString *squarePOSpluginURL = @"squarePOSplugin://";
 
-    CDVPluginResult *pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_NO_RESULT];
-    //Maintain callback
-    [pluginResult setKeepCallbackAsBool:YES];
-    //Send plugin result
-    [self.commandDelegate sendPluginResult:pluginResult callbackId:callbackID];
-
     // Replace with your app's callback URL.
     // Note: You can retrieve this value from Info.plist
     NSURL *const callbackURL = [NSURL URLWithString:squarePOSpluginURL];
@@ -48,13 +42,17 @@ NSMutableDictionary *options;
                                    returnAutomaticallyAfterPayment:NO
                                                              error:&error];
 
-    //Send plugin result
-    //[self.commandDelegate sendPluginResult:pluginResult callbackId:callbackID];
     //send the transaction to the Square Point of Sale app
     BOOL success = [SCCAPIConnection performRequest:request error:&error];
     if (!success) {
 
     }
+
+    CDVPluginResult *pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_NO_RESULT];
+    //Maintain callback
+    [pluginResult setKeepCallbackAsBool:YES];
+    //Send plugin result
+    [self.commandDelegate sendPluginResult:pluginResult callbackId:callbackID];
 
     //CDVPluginResult *errorPlugin = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR];
     //[self.commandDelegate sendPluginResult:errorPlugin callbackId:callbackID];
