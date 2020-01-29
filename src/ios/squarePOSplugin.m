@@ -95,7 +95,7 @@ NSMutableDictionary *options;
     return YES;
 }
 
-- (BOOL)application(_ application: UIApplication,
+/*- (BOOL)application(_ application: UIApplication,
                  open url: URL,
                  options: [UIApplicationOpenURLOptionsKey : Any] = [:] ) -> Bool {
                    NSString *const sourceApplication = options[UIApplicationOpenURLOptionsSourceApplicationKey];
@@ -133,6 +133,6 @@ NSMutableDictionary *options;
 
                    return YES;
 
-}
+}*/
 
 @end
