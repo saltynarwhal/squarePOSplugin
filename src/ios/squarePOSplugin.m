@@ -1,5 +1,23 @@
 #import "squarePOSPlugin.h"
 #import <Cordova/CDVPlugin.h>
+#import "CDVPlugin.h"
+#import "CDVPlugin+Private.h"
+#import "CDVPlugin+Resources.h"
+#import "CDVViewController.h"
+
+NSString* const CDVPageDidLoadNotification = @"CDVPageDidLoadNotification";
+NSString* const CDVPluginHandleOpenURLNotification = @"CDVPluginHandleOpenURLNotification";
+NSString* const CDVPluginHandleOpenURLWithAppSourceAndAnnotationNotification = @"CDVPluginHandleOpenURLWithAppSourceAndAnnotationNotification";
+NSString* const CDVPluginResetNotification = @"CDVPluginResetNotification";
+NSString* const CDVViewWillAppearNotification = @"CDVViewWillAppearNotification";
+NSString* const CDVViewDidAppearNotification = @"CDVViewDidAppearNotification";
+NSString* const CDVViewWillDisappearNotification = @"CDVViewWillDisappearNotification";
+NSString* const CDVViewDidDisappearNotification = @"CDVViewDidDisappearNotification";
+NSString* const CDVViewWillLayoutSubviewsNotification = @"CDVViewWillLayoutSubviewsNotification";
+NSString* const CDVViewDidLayoutSubviewsNotification = @"CDVViewDidLayoutSubviewsNotification";
+NSString* const CDVViewWillTransitionToSizeNotification = @"CDVViewWillTransitionToSizeNotification";
+
+@implementation UIView (org_apache_cordova_UIView_Extension)
 
 
 @interface squarePOSplugin ()
@@ -56,7 +74,7 @@ NSMutableDictionary *options;
 
 }
 
-- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<NSString *,id> *)options
+- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options
 {
     NSString *const sourceApplication = options[UIApplicationOpenURLOptionsSourceApplicationKey];
     // Make sure the URL comes from Square Point of Sale; fail if it doesn't.
