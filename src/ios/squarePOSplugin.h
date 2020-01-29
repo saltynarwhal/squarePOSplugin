@@ -8,6 +8,4 @@
 
 - (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<NSString *,id> *)options;
 
-- (void)pluginInitialize
-
 @end
