@@ -69,9 +69,9 @@ NSMutableDictionary *options;
 {
     NSString *const sourceApplication = options[UIApplicationOpenURLOptionsSourceApplicationKey];
     // Make sure the URL comes from Square Point of Sale; fail if it doesn't.
-    if (![sourceApplication hasPrefix:@"com.squareup.square"]) {
-        return NO;
-    }
+    //if (![sourceApplication hasPrefix:@"com.squareup.square"]) {
+    //    return NO;
+    //}
 
     // The response data is encoded in the URL and can be decoded as an SCCAPIResponse.
     NSError *decodeError = nil;
