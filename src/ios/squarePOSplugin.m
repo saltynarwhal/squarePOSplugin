@@ -54,9 +54,6 @@ NSMutableDictionary *options;
     //Send plugin result
     [self.commandDelegate sendPluginResult:pluginResult callbackId:callbackID];
 
-    //CDVPluginResult *errorPlugin = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR];
-    //[self.commandDelegate sendPluginResult:errorPlugin callbackId:callbackID];
-
 }
 
 - (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<NSString *,id> *)options
