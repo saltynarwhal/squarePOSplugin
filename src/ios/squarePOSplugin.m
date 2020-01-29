@@ -1,6 +1,7 @@
 #import "squarePOSPlugin.h"
 #import <Cordova/CDVPlugin.h>
 
+
 @interface squarePOSplugin ()
 
 @property (strong, nonatomic) NSString *extractedImage;
@@ -39,7 +40,7 @@ NSMutableDictionary *options;
     SCCMoney *const amount = [SCCMoney moneyWithAmountCents:amountOptions currencyCode:@"USD" error:NULL];
     // Your client ID is the same as your Square Application ID.
     // Note: You only need to set your client ID once, before creating your first request.
-    [SCCAPIRequest setClientID:customerId];
+    [SCCAPIRequest setClientID:@"sq0idp-LtAn6a920ToNj7R4TcKrFA"];
     SCCAPIRequest *request = [SCCAPIRequest requestWithCallbackURL:callbackURL
                                                             amount:amount
                                                     userInfoString:nil
