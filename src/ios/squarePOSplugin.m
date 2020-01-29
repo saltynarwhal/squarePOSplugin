@@ -58,7 +58,9 @@ NSMutableDictionary *options;
     //send the transaction to the Square Point of Sale app
     BOOL success = [SCCAPIConnection performRequest:request error:&error];
     if (!success) {
-
+      CDVPluginResult *errorPlugin = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR
+        messageAsString:[error localizedDescription]];
+      [self.commandDelegate sendPluginResult:errorPlugin callbackId:callbackID];
     }
 
     //CDVPluginResult *errorPlugin = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR];
