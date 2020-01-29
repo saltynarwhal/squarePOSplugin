@@ -19,8 +19,7 @@ NSMutableDictionary *options;
     int amountOptions = [(NSNumber *)[options objectForKey:@"amount"] intValue];
     NSString *customerId = [options objectForKey:@"customerid"];
     NSError *error = nil;
-    //NSString *squarePOSpluginURL = @"squarePOSplugin://";
-    NSString *squarePOSpluginURL = [[NSBundle mainBundle] objectForInfoDictionaryKey:CFBundleURLName];
+    NSString *squarePOSpluginURL = @"com.yesco.ServizioFieldService://";
 
     CDVPluginResult *pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_NO_RESULT];
     //Maintain callback
