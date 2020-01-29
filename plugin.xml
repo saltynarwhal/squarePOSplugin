@@ -52,7 +52,7 @@
             </array>
         </config-file>
 
-        <config-file target="*-Info.plist" parent="CFBundleURLTypes">
+        <config-file platform="ios" target="*-Info.plist" parent="CFBundleURLTypes">
             <array>
                 <dict>
                     <key>CFBundleTypeRole</key>

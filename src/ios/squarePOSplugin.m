@@ -19,16 +19,12 @@ NSMutableDictionary *options;
     int amountOptions = [(NSNumber *)[options objectForKey:@"amount"] intValue];
     NSString *customerId = [options objectForKey:@"customerid"];
     NSError *error = nil;
-    NSString *squarePOSpluginURL = @"squarePOSPlugin://";
+    NSString *squarePOSpluginURL = @"squarePOSplugin://";
 
-    CDVPluginResult *pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_NO_RESULT];
+    //CDVPluginResult *pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_NO_RESULT];
+    CDVPluginResult* pluginResult = nil;
     //Maintain callback
     [pluginResult setKeepCallbackAsBool:YES];
-    //Send plugin result
-    //[self.commandDelegate sendPluginResult:pluginResult callbackId:callbackID];
-
-    // Replace with your app's callback URL.
-    // Note: You can retrieve this value from Info.plist
 
 
     // Replace with your app's callback URL.
@@ -51,21 +47,22 @@ NSMutableDictionary *options;
                                    returnAutomaticallyAfterPayment:NO
                                                              error:&error];
 
-
-    //Send plugin result
-    //[self.commandDelegate sendPluginResult:pluginResult callbackId:callbackID];
     //send the transaction to the Square Point of Sale app
     BOOL success = [SCCAPIConnection performRequest:request error:&error];
     if (!success) {
-
+      //CDVPluginResult *errorPlugin = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR];
+      //[self.commandDelegate sendPluginResult:errorPlugin callbackId:callbackID];
     }
 
-    //CDVPluginResult *errorPlugin = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR];
-    //[self.commandDelegate sendPluginResult:errorPlugin callbackId:callbackID];
+    //Send plugin result
+    [self.commandDelegate sendPluginResult:pluginResult callbackId:callbackID];
+
 
 }
 
-- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<NSString *,id> *)options
+- (BOOL)application:(UIApplication *)app
+            openURL:(NSURL *)url
+            options:(NSDictionary<NSString *, id> *)options;
 {
     NSString *const sourceApplication = options[UIApplicationOpenURLOptionsSourceApplicationKey];
     // Make sure the URL comes from Square Point of Sale; fail if it doesn't.
@@ -78,6 +75,7 @@ NSMutableDictionary *options;
     SCCAPIResponse *const response = [SCCAPIResponse responseWithResponseURL:url error:&decodeError];
 
     if (response.isSuccessResponse) {
+      NSLog(@"Transaction successful: %@", response);
         CDVPluginResult *successPlugin = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK
             messageAsString:response.transactionID];
         [self.commandDelegate sendPluginResult:successPlugin callbackId:callbackID];
