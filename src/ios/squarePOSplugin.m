@@ -2,8 +2,6 @@
 #import <Cordova/CDVPlugin.h>
 #import <Cordova/CDVAppDelegate.h>
 
-@implementation UIView (org_apache_cordova_UIView_Extension)
-
 
 @interface squarePOSplugin ()
 
