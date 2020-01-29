@@ -51,9 +51,6 @@ NSMutableDictionary *options;
 
     //send the transaction to the Square Point of Sale app
     BOOL success = [SCCAPIConnection performRequest:request error:&error];
-    if (!success) {
-
-    }
 
 }
 
