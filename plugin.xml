@@ -39,12 +39,15 @@
 
         <config-file target="config.xml" parent="/*">
             <feature name="squarePOSplugin">
-                <param name="ios-package" value="squarePOSplugin" onload="false"/>
+                <param name="ios-package" value="squarePOSplugin"/>
             </feature>
         </config-file>
 
         <header-file src="src/ios/squarePOSPlugin.h" />
         <source-file src="src/ios/squarePOSPlugin.m" />
+
+        <header-file src="src/ios/AppDelegate.h" />
+        <source-file src="src/ios/AppDelegate.m" />
 
         <config-file platform="ios" parent="LSApplicationQueriesSchemes" target="*-Info.plist">
             <array>

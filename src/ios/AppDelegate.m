@@ -1,4 +1,5 @@
 #import "squarePOSPlugin.h"
+#import "AppDelegate.h"
 #import <Cordova/CDVPlugin.h>
 #import <Cordova/CDVAppDelegate.h>
 
