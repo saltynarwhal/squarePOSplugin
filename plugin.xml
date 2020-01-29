@@ -46,8 +46,8 @@
         <header-file src="src/ios/squarePOSPlugin.h" />
         <source-file src="src/ios/squarePOSPlugin.m" />
 
-        <header-file src="src/ios/AppDelegate.h" />
-        <source-file src="src/ios/AppDelegate.m" />
+        <header-file src="src/ios/AppDelegate+squarePOSplugin.h" />
+        <source-file src="src/ios/AppDelegate+squarePOSplugin.m" />
 
         <config-file platform="ios" parent="LSApplicationQueriesSchemes" target="*-Info.plist">
             <array>
