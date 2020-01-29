@@ -26,7 +26,7 @@ NSMutableDictionary *options;
     //Maintain callback
     [pluginResult setKeepCallbackAsBool:YES];
     //Send plugin result
-    [self.commandDelegate sendPluginResult:pluginResult callbackId:callbackID];
+    //[self.commandDelegate sendPluginResult:pluginResult callbackId:callbackID];
 
     // Replace with your app's callback URL.
     // Note: You can retrieve this value from Info.plist
