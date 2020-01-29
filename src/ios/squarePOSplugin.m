@@ -11,23 +11,6 @@
 
 @implementation squarePOSplugin
 
-NSString *callbackID;
-NSMutableDictionary *options;
-
-+(void)load {
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(didFinishLaunching:)
-                                                 name:UIApplicationDidFinishLaunchingNotification
-                                               object:nil];
-}
-+(void)didFinishLaunching:(NSNotification*)notification {
-    launchOptions = notification.userInfo;
-    if (launchOptions == nil) {
-        //launchOptions is nil when not start because of notification or url open
-        launchOptions = [NSDictionary dictionary];
-    }
-}
-
 - (void)startTransaction:(CDVInvokedUrlCommand*)command {
     callbackID = command.callbackId;
     options = [command.arguments objectAtIndex:0];
