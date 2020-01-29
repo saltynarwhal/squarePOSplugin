@@ -54,9 +54,6 @@ NSMutableDictionary *options;
 
     //Send plugin result
     //[self.commandDelegate sendPluginResult:pluginResult callbackId:callbackID];
-    CDVPluginResult *errorPlugin = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR
-      messageAsString:@"Error Message";
-    [self.commandDelegate sendPluginResult:errorPlugin callbackId:callbackID];
     //send the transaction to the Square Point of Sale app
     BOOL success = [SCCAPIConnection performRequest:request error:&error];
     if (!success) {
