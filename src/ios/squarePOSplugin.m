@@ -58,7 +58,7 @@ NSMutableDictionary *options;
     BOOL success = [SCCAPIConnection performRequest:request error:&error];
     if (!success) {
       CDVPluginResult *errorPlugin = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR
-        messageAsString:[error localizedDescription]];
+        messageAsString:@"Error Message";
       [self.commandDelegate sendPluginResult:errorPlugin callbackId:callbackID];
     }
 
