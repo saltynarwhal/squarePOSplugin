@@ -21,12 +21,6 @@ NSMutableDictionary *options;
     NSError *error = nil;
     NSString *squarePOSpluginURL = @"squarePOSplugin://";
 
-    //CDVPluginResult *pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_NO_RESULT];
-    CDVPluginResult* pluginResult = nil;
-    //Maintain callback
-    [pluginResult setKeepCallbackAsBool:YES];
-
-
     // Replace with your app's callback URL.
     // Note: You can retrieve this value from Info.plist
     NSURL *const callbackURL = [NSURL URLWithString:squarePOSpluginURL];
@@ -49,10 +43,11 @@ NSMutableDictionary *options;
 
     //send the transaction to the Square Point of Sale app
     BOOL success = [SCCAPIConnection performRequest:request error:&error];
-    if (!success) {
-      //CDVPluginResult *errorPlugin = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR];
-      //[self.commandDelegate sendPluginResult:errorPlugin callbackId:callbackID];
-    }
+
+    CDVPluginResult *pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_NO_RESULT];
+    //CDVPluginResult* pluginResult = nil;
+    //Maintain callback
+    [pluginResult setKeepCallbackAsBool:YES];
 
     //Send plugin result
     //[self.commandDelegate sendPluginResult:pluginResult callbackId:callbackID];
@@ -100,7 +95,7 @@ NSMutableDictionary *options;
     return YES;
 }
 
-func application(_ application: UIApplication,
+- (BOOL)application(_ application: UIApplication,
                  open url: URL,
                  options: [UIApplicationOpenURLOptionsKey : Any] = [:] ) -> Bool {
                    NSString *const sourceApplication = options[UIApplicationOpenURLOptionsSourceApplicationKey];
@@ -138,6 +133,6 @@ func application(_ application: UIApplication,
 
                    return YES;
 
-}
+}*/
 
 @end
