@@ -1,5 +1,6 @@
 #import "squarePOSPlugin.h"
 #import <Cordova/CDVPlugin.h>
+#import <Cordova/CDVPlugin.m>
 
 
 @interface squarePOSplugin ()
@@ -12,6 +13,10 @@
 
 NSString *callbackID;
 NSMutableDictionary *options;
+
+- (void) pluginInitialize {
+
+}
 
 - (void)startTransaction:(CDVInvokedUrlCommand*)command {
     callbackID = command.callbackId;
@@ -26,7 +31,7 @@ NSMutableDictionary *options;
     //Maintain callback
     [pluginResult setKeepCallbackAsBool:YES];
     //Send plugin result
-    [self.commandDelegate sendPluginResult:pluginResult callbackId:callbackID];
+    //[self.commandDelegate sendPluginResult:pluginResult callbackId:callbackID];
 
     // Replace with your app's callback URL.
     // Note: You can retrieve this value from Info.plist
@@ -53,15 +58,15 @@ NSMutableDictionary *options;
                                                              error:&error];
 
     //Send plugin result
-    [self.commandDelegate sendPluginResult:pluginResult callbackId:callbackID];
+    //[self.commandDelegate sendPluginResult:pluginResult callbackId:callbackID];
     //send the transaction to the Square Point of Sale app
     BOOL success = [SCCAPIConnection performRequest:request error:&error];
     if (!success) {
 
     }
 
-    CDVPluginResult *errorPlugin = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR];
-    [self.commandDelegate sendPluginResult:errorPlugin callbackId:callbackID];
+    //CDVPluginResult *errorPlugin = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR];
+    //[self.commandDelegate sendPluginResult:errorPlugin callbackId:callbackID];
 
 }
 
