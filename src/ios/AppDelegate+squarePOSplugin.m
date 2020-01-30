@@ -1,8 +1,6 @@
 #import "AppDelegate+squarePOSplugin.h"
 #import "squarePOSplugin.h"
 
-static NSString *const PLUGIN_NAME = @"squarePOSplugin";
-
 @implementation AppDelegate (squarePOSplugin)
 
 - (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<NSString *,id> *)options
