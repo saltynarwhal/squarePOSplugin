@@ -45,7 +45,7 @@ NSMutableDictionary *options;
                                                         customerID:nil
                                               supportedTenderTypes:SCCAPIRequestTenderTypeAll
                                                  clearsDefaultFees:NO
-                                   returnAutomaticallyAfterPayment:NO
+                                   returnAutomaticallyAfterPayment:YES
                                                              error:&error];
 
 
