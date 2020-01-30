@@ -2,7 +2,7 @@
 #import "squarePOSplugin.h"
 #import <Cordova/CDVPlugin.h>
 
-@interface squarePOSplugin ()
+@interface AppDelegate ()
 
 @property (strong, nonatomic) NSString *extractedImage;
 
