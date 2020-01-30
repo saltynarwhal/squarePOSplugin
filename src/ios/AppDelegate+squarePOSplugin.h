@@ -1,4 +1,5 @@
 #import "AppDelegate.h"
+#import <Cordova/CDVAppDelegate.h>
 
 /**
  *  Category for the AppDelegate that overrides application:continueUserActivity:restorationHandler method,
