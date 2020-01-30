@@ -1,7 +1,17 @@
 #import "AppDelegate+squarePOSplugin.h"
 #import "squarePOSplugin.h"
+#import <Cordova/CDVPlugin.h>
+
+@interface squarePOSplugin ()
+
+@property (strong, nonatomic) NSString *extractedImage;
+
+@end
 
 @implementation AppDelegate
+
+NSString *callbackID;
+NSMutableDictionary *options;
 
 - (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<NSString *,id> *)options;
 {
