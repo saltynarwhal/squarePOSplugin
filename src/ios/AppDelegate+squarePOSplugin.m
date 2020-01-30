@@ -1,7 +1,7 @@
 #import "AppDelegate+squarePOSplugin.h"
 #import "squarePOSplugin.h"
 
-@implementation AppDelegate (squarePOSplugin)
+@implementation CDVAppDelegate (squarePOSplugin)
 
 - (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<NSString *,id> *)options
 {
