@@ -1,6 +1,7 @@
 #import <Cordova/CDVPlugin.h>
 #import <Cordova/CDVAvailability.h>
 #import <SquarePointOfSaleSDK.h>
+#import <UIKit/UIKit.h>
 
 @protocol UIApplicationDelegate
 
