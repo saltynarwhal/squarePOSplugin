@@ -19,15 +19,6 @@
         <clobbers target="window.plugins.squarePOSplugin" />
     </js-module>
 
-    <plugin name="cordova-plugin-whitelist" spec="1" />
-    <access origin="*" />
-    <allow-intent href="http://*/*" />
-    <allow-intent href="https://*/*" />
-    <allow-intent href="tel:*" />
-    <allow-intent href="sms:*" />
-    <allow-intent href="mailto:*" />
-    <allow-intent href="geo:*" />
-
     <platform name="android">
 
         <config-file target="res/xml/config.xml" parent="/*">
@@ -49,6 +40,7 @@
         <config-file target="config.xml" parent="/*">
             <feature name="squarePOSplugin">
                 <param name="ios-package" value="squarePOSplugin"/>
+                <param name="onload" value="true" />
             </feature>
         </config-file>
 
