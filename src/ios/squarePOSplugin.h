@@ -6,6 +6,7 @@
 @interface squarePOSplugin : CDVPlugin <UIApplicationDelegate>
 
   - (void)pluginInitialize;
+  - (void)finishLaunching:(NSNotification *)notification;
 
   - (void)startTransaction:(CDVInvokedUrlCommand*)command;
 
