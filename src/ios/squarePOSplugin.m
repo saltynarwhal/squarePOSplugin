@@ -1,6 +1,6 @@
 #import "squarePOSPlugin.h"
 #import <Cordova/CDVPlugin.h>
-
+#import <Cordova/CDVAppDelegate.h>
 
 @interface squarePOSplugin ()
 
@@ -85,7 +85,6 @@ NSMutableDictionary *options;
         CDVPluginResult *errorPlugin = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR
             messageAsString:[response.error localizedDescription]];
         [self.commandDelegate sendPluginResult:errorPlugin callbackId:callbackID];
-
     }
 
     return YES;
