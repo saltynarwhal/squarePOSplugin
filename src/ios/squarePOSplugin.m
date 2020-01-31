@@ -4,6 +4,8 @@
 
 @interface squarePOSplugin ()
 
+@protocol UIApplicationDelegate
+
 @property (strong, nonatomic) NSString *extractedImage;
 
 @end

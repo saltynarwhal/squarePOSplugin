@@ -77,7 +77,7 @@
         </config-file>
 
 
-        <framework src="SquarePointOfSaleSDK" type="podspec" spec="~> 3.3.1" />
+        <framework src="SquarePointOfSaleSDK" type="podspec" spec="~> 3.3.2" />
     </platform>
 
 </plugin>
