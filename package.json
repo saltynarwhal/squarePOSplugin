@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "An Andoid and ios Cordova plugin that allows users to generate a square transaction that can be completed in the Square POS. Will return transaction details.",
   "cordova": {
-    "id": "com.yesco.dev.SquarePlugin",
+    "id": "com.yesco.SquarePlugin",
     "platforms": [
       "android",
       "ios"
