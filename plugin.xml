@@ -19,6 +19,8 @@
         <clobbers target="window.plugins.squarePOSplugin" />
     </js-module>
 
+    <dependency id="cordova-plugin-app-event" />
+
     <platform name="android">
 
         <config-file target="res/xml/config.xml" parent="/*">
@@ -46,9 +48,6 @@
 
         <header-file src="src/ios/squarePOSplugin.h" />
         <source-file src="src/ios/squarePOSplugin.m" />
-
-        <header-file src="src/ios/customAppDelegate.h" />
-        <source-file src="src/ios/customAppDelegate.m" />
 
         <config-file platform="ios" parent="LSApplicationQueriesSchemes" target="*-Info.plist">
             <array>
