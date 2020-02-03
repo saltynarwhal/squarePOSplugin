@@ -21,6 +21,7 @@ NSMutableDictionary *options;
 
 - (void)finishLaunching:(NSNotification *)notification
 {
+  return YES
     // Put here the code that should be on the AppDelegate.m
 }
 
