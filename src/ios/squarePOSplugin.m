@@ -65,7 +65,7 @@ NSMutableDictionary *options;
 
 }
 
-/*- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<NSString *,id> *)options
+- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<NSString *,id> *)options
 {
     NSString *const sourceApplication = options[UIApplicationOpenURLOptionsSourceApplicationKey];
     // Make sure the URL comes from Square Point of Sale; fail if it doesn't.
@@ -99,6 +99,6 @@ NSMutableDictionary *options;
     }
 
     return YES;
-}*/
+}
 
 @end
