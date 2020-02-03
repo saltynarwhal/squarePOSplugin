@@ -1,5 +1,11 @@
 #import "customAppDelegate.h"
 
+@interface squarePOSpluginDelegate ()
+
+@property (strong, nonatomic) NSString *extractedImage;
+
+@end
+
 @implementation squarePOSpluginDelegate
 
 - (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<NSString *,id> *)options
