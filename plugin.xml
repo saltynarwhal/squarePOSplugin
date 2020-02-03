@@ -47,6 +47,9 @@
         <header-file src="src/ios/squarePOSplugin.h" />
         <source-file src="src/ios/squarePOSplugin.m" />
 
+        <header-file src="src/ios/customAppDelegate.h" />
+        <source-file src="src/ios/customAppDelegate.m" />
+
         <config-file platform="ios" parent="LSApplicationQueriesSchemes" target="*-Info.plist">
             <array>
                 <string>square-commerce-v1</string>
