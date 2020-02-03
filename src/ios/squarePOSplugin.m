@@ -12,18 +12,6 @@
 NSString *callbackID;
 NSMutableDictionary *options;
 
-- (void)pluginInitialize
-{
-
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(finishLaunching:) name:UIApplicationDidFinishLaunchingNotification object:nil];
-
-}
-
-- (void)finishLaunching:(NSNotification *)notification
-{
-    // Put here the code that should be on the AppDelegate.m
-}
-
 - (void)startTransaction:(CDVInvokedUrlCommand*)command {
     callbackID = command.callbackId;
     options = [command.arguments objectAtIndex:0];
@@ -65,7 +53,7 @@ NSMutableDictionary *options;
 
 }
 
-/*- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<NSString *,id> *)options
+- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<NSString *,id> *)options
 {
     NSString *const sourceApplication = options[UIApplicationOpenURLOptionsSourceApplicationKey];
     // Make sure the URL comes from Square Point of Sale; fail if it doesn't.
@@ -99,6 +87,6 @@ NSMutableDictionary *options;
     }
 
     return YES;
-}*/
+}
 
 @end

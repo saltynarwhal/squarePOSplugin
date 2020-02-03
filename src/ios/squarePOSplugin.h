@@ -1,12 +1,8 @@
+#import "APPAppEventDelegate.h"
 #import <Cordova/CDVPlugin.h>
-#import <Cordova/CDVAvailability.h>
 #import <SquarePointOfSaleSDK.h>
-#import <UIKit/UIKit.h>
 
-@interface squarePOSplugin : CDVPlugin <UIApplicationDelegate>
-
-  - (void)pluginInitialize;
-  - (void)finishLaunching:(NSNotification *)notification;
+@interface squarePOSplugin : CDVPlugin <APPAppEventDelegate>
 
   - (void)startTransaction:(CDVInvokedUrlCommand*)command;
 
