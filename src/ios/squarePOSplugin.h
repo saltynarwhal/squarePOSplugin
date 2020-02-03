@@ -6,6 +6,6 @@
 
   - (void)startTransaction:(CDVInvokedUrlCommand*)command;
 
-  - (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<NSString *,id> *)options;
+  - (BOOL)openURL:(NSURL *)url options:(NSDictionary<NSString *,id> *)options;
 
 @end
