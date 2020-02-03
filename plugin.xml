@@ -49,7 +49,7 @@
 
         <config-file platform="ios" parent="LSApplicationQueriesSchemes" target="*-Info.plist">
             <array>
-                <string>square-commerce-v2</string>
+                <string>square-commerce-v1</string>
             </array>
         </config-file>
 
